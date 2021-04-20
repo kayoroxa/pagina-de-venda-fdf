@@ -80,6 +80,7 @@ export default function Home() {
       </Grid>
 
       <Button
+        href="https://pay.hotmart.com/Y51115808H?checkoutMode=10"
         variant="outlined"
         // color="default"
         size="large"
@@ -135,6 +136,7 @@ export default function Home() {
       <Hidden mdUp>
         <div className="fixed" style={{ opacity: showCall }}>
           <Button
+            href="https://pay.hotmart.com/Y51115808H?checkoutMode=10"
             variant="outlined"
             // color="default"
             size="large"
@@ -166,6 +168,7 @@ export default function Home() {
             </Grid>
             <Grid item md={3} lg={3} className="show">
               <Button
+                href="https://pay.hotmart.com/Y51115808H?checkoutMode=10"
                 variant="outlined"
                 // color="default"
                 size="large"
@@ -185,6 +188,7 @@ export default function Home() {
         </div>
 
         <Button
+          href="https://pay.hotmart.com/Y51115808H?checkoutMode=10"
           variant="outlined"
           // color="default"
           size="large"
