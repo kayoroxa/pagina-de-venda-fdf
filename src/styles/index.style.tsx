@@ -6,7 +6,7 @@ const MainStyle = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding-bottom: 20vh;
+  padding-bottom: 12vh;
   .title {
     width: min(90%, 700px);
     /* height: 20vh; */
@@ -70,8 +70,8 @@ const MainStyle = styled.div`
     border-radius: 10px;
   }
   .fixed {
-    width: 100vw;
-    height: 13vh;
+    width: 90vw;
+    /* height: 10vh; */
     /* background-color: green; */
     position: fixed;
     bottom: 10px;
@@ -79,12 +79,21 @@ const MainStyle = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 40px;
+  }
+
+  .fixed-pc {
+    width: 100vw;
+    position: fixed;
+    top: 0px;
+    background-color: white;
+    box-shadow: 0px 0px 8px 5px rgba(0, 0, 0, 0.2);
   }
 
   .garantia {
     max-width: min(93%, 800px);
     border-radius: 10px;
-    font-size: max(2.5vw, 17px);
+    font-size: max(1.5vw, 20px);
     .grid {
       padding: 10px 20px;
       text-align: center;
@@ -117,6 +126,10 @@ const MainStyle = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+
+  .show {
+    /* border: black 1px solid; */
   }
 `
 export default MainStyle

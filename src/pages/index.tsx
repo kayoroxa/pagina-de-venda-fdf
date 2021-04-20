@@ -1,8 +1,8 @@
-// import { useState } from 'react'
+import { useState } from 'react'
 import MainStyle from '../styles/index.style'
 import Button from '@material-ui/core/Button'
 import CheckCircleIcon from '@material-ui/icons/CheckCircle'
-import { Grid, makeStyles, Paper } from '@material-ui/core'
+import { Grid, Hidden, makeStyles, Paper, Typography } from '@material-ui/core'
 import ListItens from '../components/ListItens'
 import Video from '../components/Video'
 import Valor from '../components/Valor'
@@ -16,9 +16,27 @@ const useStyles = makeStyles({
   },
   button: {
     backgroundColor: '#fff',
-    color: '#05990c',
+    color: '#5fb100',
+    borderColor: '#5fb100',
+    fontSize: 'min(5vw, 20px)',
+    borderRadius: '40px',
+    width: 'min(90vw, 500px)',
+    height: 'max(8vh, 70px)',
     '&:hover': {
-      backgroundColor: '#05990c',
+      backgroundColor: '#5fb100',
+      color: '#fff',
+    },
+  },
+  buttonFill: {
+    backgroundColor: '#5fb100',
+    color: '#fff',
+    borderColor: '#5fb100',
+    fontSize: 'min(5vw, 20px)',
+    borderRadius: '40px',
+    width: 'min(90vw, 500px)',
+    height: 'max(8vh, 70px)',
+    '&:hover': {
+      backgroundColor: '#7fcf23',
       color: '#fff',
     },
   },
@@ -26,24 +44,25 @@ const useStyles = makeStyles({
 
 export default function Home() {
   const classes = useStyles()
-  // const [showCall, setShowCall] = useState(0)
-  // var myScrollFunc = function () {
-  //   var y = window.scrollY
-  //   if (y >= 3) {
-  //     setShowCall(1)
-  //   } else {
-  //     setShowCall(0)
-  //   }
-  // }
-  // if (process.browser) {
-  //   window.addEventListener('scroll', myScrollFunc)
-  // }
+  const [showCall, setShowCall] = useState(0)
+  var myScrollFunc = function () {
+    var y = window.scrollY
+    if (y >= 400) {
+      setShowCall(1)
+    } else {
+      setShowCall(0)
+    }
+  }
+  if (process.browser) {
+    window.addEventListener('scroll', myScrollFunc)
+  }
   return (
     <MainStyle>
       <div className="title separado">
         <h1>
+          {/* <Typography variant="h3"> */}
           <span>Ficar fluente</span> nunca foi tão fácil, aprenda tudo
-          necessário <span>em 60 dias</span>!
+          necessário <span>em 60 dias</span>!{/* </Typography> */}
         </h1>
       </div>
       <Grid container spacing={1} alignItems="center" justify="flex-end">
@@ -64,10 +83,10 @@ export default function Home() {
         variant="outlined"
         // color="default"
         size="large"
-        className={classes.button}
+        className={classes.buttonFill}
         startIcon={<CheckCircleIcon />}
       >
-        <b>QUERO FICAR FLUENTE</b>
+        QUERO FICAR FLUENTE
       </Button>
 
       <div className="ao-redor">
@@ -96,14 +115,14 @@ export default function Home() {
           justify="flex-end"
           className="grid"
         >
-          <Grid item lg={4} md={4} sm={12} xs={12}>
+          <Grid item xs={12} sm={12} md={4} lg={4}>
             <img src="images/garantia-grande.png" />
           </Grid>
 
-          <Grid item lg={8} md={8} sm={12} xs={12}>
-            <h1>
+          <Grid item xs={12} sm={12} md={8} lg={8}>
+            <h2>
               <b>Confiamos no curso e em você!</b>
-            </h1>
+            </h2>
             <p>
               Se em até 7 dias você não ficar satisfeito com o curso, nos mande
               um e-mail e iremos te reembolsar completamente! Sem enganação e
@@ -113,17 +132,68 @@ export default function Home() {
         </Grid>
       </Paper>
 
-      <Paper elevation={10} className="fixed">
+      <Hidden mdUp>
+        <div className="fixed" style={{ opacity: showCall }}>
+          <Button
+            variant="outlined"
+            // color="default"
+            size="large"
+            className={classes.button}
+            startIcon={<CheckCircleIcon />}
+            // fullWidth
+          >
+            QUERO FICAR FLUENTE
+          </Button>
+        </div>
+      </Hidden>
+
+      <Hidden smDown>
+        <div className="fixed-pc" style={{ opacity: showCall }}>
+          <Grid
+            container
+            // spacing={2}
+            alignItems="center"
+            justify="space-around"
+          >
+            <Grid item md={4} lg={4} className="show">
+              <Typography variant="h6">
+                Invista na sua conquista e descubra como ser um Youtuber de
+                Sucesso
+              </Typography>
+            </Grid>
+            <Grid item md={4} lg={3} className="show">
+              <Valor removeOldValue notColor />
+            </Grid>
+            <Grid item md={3} lg={3} className="show">
+              <Button
+                variant="outlined"
+                // color="default"
+                size="large"
+                className={classes.button}
+                style={{
+                  fontSize: 'min(1.4vw, 20px)',
+                  width: '100%',
+                  height: 'auto',
+                }}
+                startIcon={<CheckCircleIcon />}
+                fullWidth
+              >
+                QUERO FICAR FLUENTE
+              </Button>
+            </Grid>
+          </Grid>
+        </div>
+
         <Button
           variant="outlined"
           // color="default"
           size="large"
-          className={classes.button}
+          className={classes.buttonFill}
           startIcon={<CheckCircleIcon />}
         >
-          <b>QUERO FICAR FLUENTE</b>
+          OK. QUERO FICAR FLUENTE
         </Button>
-      </Paper>
+      </Hidden>
     </MainStyle>
   )
 }

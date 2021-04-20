@@ -1,7 +1,12 @@
 import styled from 'styled-components'
-export const Container = styled.div`
+
+interface SProps {
+  notColor?: boolean
+}
+
+export const Container = styled.div<SProps>`
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
   /* background: blue; */
   display: flex;
   position: relative;
@@ -13,14 +18,15 @@ export const Container = styled.div`
 
   font-size: 20px;
   .left {
-    color: orange;
+    color: ${({ notColor }) => !notColor && 'orange'};
     display: flex;
     flex-direction: column;
   }
   .right {
     margin-left: 10px;
-    font-size: 60px;
-    color: #05b305;
+    font-size: min(300%, 60px);
+    color: ${({ notColor }) => !notColor && '#5fb100'};
+    line-height: 1.15;
     top: -5;
     /* position: relative; */
     b {
@@ -28,12 +34,18 @@ export const Container = styled.div`
     }
   }
 `
+interface Props {
+  removeOldValue?: boolean
+  notColor?: boolean
+}
 
-export default function Valor() {
+export default function Valor({ removeOldValue, notColor }: Props) {
   return (
-    <Container>
+    <Container notColor={notColor}>
       <div className="price">
-        <b style={{ color: 'black' }}>De 2.000</b>
+        {!removeOldValue && (
+          <b style={{ textDecoration: 'line-through' }}>De R$2.000</b>
+        )}
         <div className="price-wrapper">
           <div className="left">
             <b>Por apenas</b>
