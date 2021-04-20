@@ -1,5 +1,5 @@
 import React from 'react'
-import { createStyles, Theme, makeStyles } from '@material-ui/core/styles'
+import { createStyles, makeStyles } from '@material-ui/core/styles'
 import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
 import ListItemText from '@material-ui/core/ListItemText'
@@ -9,7 +9,7 @@ import BeachAccessIcon from '@material-ui/icons/BeachAccess'
 import CardGiftcardIcon from '@material-ui/icons/CardGiftcard'
 import AllInclusiveIcon from '@material-ui/icons/AllInclusive'
 
-const useStyles = makeStyles((theme: Theme) =>
+const useStyles = makeStyles(() =>
   createStyles({
     root: {
       width: '100%',

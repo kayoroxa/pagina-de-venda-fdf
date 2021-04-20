@@ -1,9 +1,8 @@
-import { useState } from 'react'
-import IconText from '../components/IconText'
+// import { useState } from 'react'
 import MainStyle from '../styles/index.style'
 import Button from '@material-ui/core/Button'
 import CheckCircleIcon from '@material-ui/icons/CheckCircle'
-import { Box, Grid, makeStyles, Paper, Typography } from '@material-ui/core'
+import { Grid, makeStyles, Paper } from '@material-ui/core'
 import ListItens from '../components/ListItens'
 import Video from '../components/Video'
 import Valor from '../components/Valor'
@@ -27,18 +26,18 @@ const useStyles = makeStyles({
 
 export default function Home() {
   const classes = useStyles()
-  const [showCall, setShowCall] = useState(0)
-  var myScrollFunc = function () {
-    var y = window.scrollY
-    if (y >= 3) {
-      setShowCall(1)
-    } else {
-      setShowCall(0)
-    }
-  }
-  if (process.browser) {
-    window.addEventListener('scroll', myScrollFunc)
-  }
+  // const [showCall, setShowCall] = useState(0)
+  // var myScrollFunc = function () {
+  //   var y = window.scrollY
+  //   if (y >= 3) {
+  //     setShowCall(1)
+  //   } else {
+  //     setShowCall(0)
+  //   }
+  // }
+  // if (process.browser) {
+  //   window.addEventListener('scroll', myScrollFunc)
+  // }
   return (
     <MainStyle>
       <div className="title separado">
