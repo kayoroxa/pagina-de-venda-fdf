@@ -44,7 +44,7 @@ export default function Valor({ removeOldValue, notColor }: Props) {
     <Container notColor={notColor}>
       <div className="price">
         {!removeOldValue && (
-          <b style={{ textDecoration: 'line-through' }}>De R$2.000</b>
+          <b style={{ textDecoration: 'line-through' }}>De R$1.597</b>
         )}
         <div className="price-wrapper">
           <div className="left">
@@ -52,7 +52,7 @@ export default function Valor({ removeOldValue, notColor }: Props) {
             <b style={{ fontSize: '25px' }}>12x de R$</b>
           </div>
           <div className="right">
-            <b>38,68</b>
+            <b>28,94</b>
           </div>
         </div>
       </div>

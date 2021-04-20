@@ -5,9 +5,11 @@ import ListItem from '@material-ui/core/ListItem'
 import ListItemText from '@material-ui/core/ListItemText'
 import ListItemAvatar from '@material-ui/core/ListItemAvatar'
 import Avatar from '@material-ui/core/Avatar'
-import BeachAccessIcon from '@material-ui/icons/BeachAccess'
 import CardGiftcardIcon from '@material-ui/icons/CardGiftcard'
 import AllInclusiveIcon from '@material-ui/icons/AllInclusive'
+import TimelapseIcon from '@material-ui/icons/Timelapse'
+import CheckCircleIcon from '@material-ui/icons/CheckCircle'
+import FlashOnIcon from '@material-ui/icons/FlashOn'
 
 const useStyles = makeStyles(() =>
   createStyles({
@@ -44,16 +46,19 @@ export default function ListItens() {
       />
       <Item
         icon={<AllInclusiveIcon />}
-        text="Acesso vitalício, no seu ritmo."
+        text="Assista as aulas quantas vezes você quiser"
       />
       <Item
-        icon={<BeachAccessIcon />}
+        icon={<TimelapseIcon />}
         text="Aprenda montar frase em qualquer tempo verbal"
       />
-      <Item icon={<BeachAccessIcon />} text="Fique fluente" />
       <Item
-        icon={<BeachAccessIcon />}
-        text="Aprenda tudo necessário no inglês em 60 aulas"
+        icon={<CheckCircleIcon />}
+        text="Fique fluente no inglês de uma vez por toda"
+      />
+      <Item
+        icon={<FlashOnIcon />}
+        text="Aprenda tudo necessário do inglês em 60 aulas"
       />
     </List>
   )
