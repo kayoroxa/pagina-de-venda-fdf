@@ -6,6 +6,7 @@ import { Grid, Hidden, makeStyles, Paper, Typography } from '@material-ui/core'
 import ListItens from '../components/ListItens'
 import Video from '../components/Video'
 import Valor from '../components/Valor'
+import Fac from '../components/Fac'
 
 const useStyles = makeStyles({
   flexGrow: {
@@ -107,6 +108,8 @@ export default function Home() {
           <Video url="https://www.youtube-nocookie.com/embed/DT3es07ISuA" />
         </Paper>
       </div>
+
+      <Fac />
 
       <Paper elevation={3} className="garantia separado">
         <Grid
