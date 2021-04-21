@@ -8,7 +8,7 @@ const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       width: '100%',
-      maxWidth: 700,
+      maxWidth: 800,
       backgroundColor: theme.palette.background.paper,
     },
     nested: {
@@ -41,7 +41,7 @@ export default function fac() {
       />
       <SubFac
         pergunta="Este curso é realmente completo?"
-        resposta="Sim, a idéia principal do Curso é você dominar absolutamente tudo para você se tornar fluênte no inglês através de um único curso."
+        resposta="Sim, a idéia principal do Curso é você dominar absolutamente tudo para você se tornar fluente no inglês através de um único curso."
       />
       <SubFac
         pergunta="Quanto tempo terei acesso ao curso"
