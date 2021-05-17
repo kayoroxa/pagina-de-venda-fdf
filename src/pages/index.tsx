@@ -61,9 +61,8 @@ export default function Home() {
     <MainStyle>
       <div className="title separado">
         <h1>
-          {/* <Typography variant="h3"> */}
-          <span>Ficar fluente</span> nunca foi tão fácil, aprenda tudo
-          necessário <span>em 60 dias</span>!{/* </Typography> */}
+          [DESCUBRA] como eu fiquei <span>FLUENTE</span> no inglês em{' '}
+          <span>4 MESES</span> sem sair de casa
         </h1>
       </div>
       <Grid container spacing={1} alignItems="center" justify="flex-end">
