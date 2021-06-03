@@ -52,7 +52,9 @@ export default function Valor({ removeOldValue, notColor }: Props) {
             <b style={{ fontSize: '25px' }}>12x de R$</b>
           </div>
           <div className="right">
-            <b>28,94</b>
+            <b>
+              19,<span style={{ fontSize: '40px' }}>19</span>
+            </b>
           </div>
         </div>
       </div>

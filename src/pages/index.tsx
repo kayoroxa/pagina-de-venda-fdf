@@ -76,7 +76,7 @@ export default function Home() {
         <Grid item lg={5} md={5} sm={12} xs={12}>
           <Paper elevation={3} className="more">
             <ListItens />
-            <Valor />
+            <Valor removeOldValue={true} />
           </Paper>
         </Grid>
       </Grid>
