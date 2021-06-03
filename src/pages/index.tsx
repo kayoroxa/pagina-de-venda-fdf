@@ -44,6 +44,8 @@ const useStyles = makeStyles({
 })
 
 export default function Home() {
+  const linkCheckOut =
+    'https://pay.hotmart.com/Y51115808H?off=9g7hziuc&checkoutMode=10'
   const classes = useStyles()
   const [showCall, setShowCall] = useState(0)
   var myScrollFunc = function () {
@@ -80,7 +82,7 @@ export default function Home() {
       </Grid>
 
       <Button
-        href="https://pay.hotmart.com/Y51115808H?checkoutMode=10"
+        href={linkCheckOut}
         variant="outlined"
         // color="default"
         size="large"
@@ -138,7 +140,7 @@ export default function Home() {
       <Hidden mdUp>
         <div className="fixed" style={{ opacity: showCall }}>
           <Button
-            href="https://pay.hotmart.com/Y51115808H?checkoutMode=10"
+            href={linkCheckOut}
             variant="outlined"
             // color="default"
             size="large"
@@ -170,7 +172,7 @@ export default function Home() {
             </Grid>
             <Grid item md={3} lg={3} className="show">
               <Button
-                href="https://pay.hotmart.com/Y51115808H?checkoutMode=10"
+                href={linkCheckOut}
                 variant="outlined"
                 // color="default"
                 size="large"
@@ -190,7 +192,7 @@ export default function Home() {
         </div>
 
         <Button
-          href="https://pay.hotmart.com/Y51115808H?checkoutMode=10"
+          href={linkCheckOut}
           variant="outlined"
           // color="default"
           size="large"
