@@ -163,8 +163,7 @@ export default function Home() {
           >
             <Grid item md={4} lg={4} className="show">
               <Typography variant="h6">
-                Invista na sua conquista e descubra como ser um Youtuber de
-                Sucesso
+                Invista na sua conquista e descubra como ficar fluente no inglês
               </Typography>
             </Grid>
             <Grid item md={4} lg={3} className="show">
