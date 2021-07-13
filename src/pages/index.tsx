@@ -63,14 +63,14 @@ export default function Home() {
     <MainStyle>
       <div className="title separado">
         <h1>
-          [DESCUBRA] como eu fiquei <span>FLUENTE</span> no inglês em{' '}
-          <span>4 MESES</span> sem sair de casa
+          [VEJA] o <span>CURSO COMPLETO DE INGLÊS</span> formula da fluência{' '}
+          <span>POR DENTRO</span>
         </h1>
       </div>
       <Grid container spacing={1} alignItems="center" justify="flex-end">
         <Grid item lg={7} md={7} sm={12} xs={12}>
           <Paper elevation={3} className="video">
-            <Video url="https://www.youtube-nocookie.com/embed/5EImG1BR0Hs" />
+            <Video url="https://www.youtube-nocookie.com/embed/DT3es07ISuA" />
           </Paper>
         </Grid>
         <Grid item lg={5} md={5} sm={12} xs={12}>
@@ -99,7 +99,7 @@ export default function Home() {
         <img src="images/cartoes.png" />
       </div>
 
-      <div className="other-background">
+      {/* <div className="other-background">
         <div className="title">
           <h1>
             Veja o Formula Da Fluência <span>por dentro</span>!
@@ -108,7 +108,7 @@ export default function Home() {
         <Paper elevation={3} className="video">
           <Video url="https://www.youtube-nocookie.com/embed/DT3es07ISuA" />
         </Paper>
-      </div>
+      </div> */}
 
       <Fac />
 
