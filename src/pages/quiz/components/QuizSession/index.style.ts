@@ -42,10 +42,12 @@ export default styled.div`
     text-transform: uppercase;
   }
 
-  .item:hover {
-    background: #66a2e9;
-    color: white;
-    cursor: pointer;
+  @media (hover: hover) and (pointer: fine) {
+    .item:hover {
+      background: #66a2e9;
+      color: white;
+      cursor: pointer;
+    }
   }
 
   .item.incorrect {
