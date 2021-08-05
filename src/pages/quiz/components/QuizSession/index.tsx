@@ -26,7 +26,6 @@ export default function QuizSession({
       event.currentTarget.classList.add('incorrect')
       listRef?.current?.children[rightAnswer].classList.add('correct')
     }
-    console.log(indexAnswer)
     setCanAnswer(false)
     onEnd({ didRight: indexAnswer === rightAnswer })
   }

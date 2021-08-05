@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export default styled.div`
+export default styled.section`
   * {
     margin: 0;
     padding: 0;
@@ -8,7 +8,7 @@ export default styled.div`
   .quiz-session {
     margin: 0;
     padding: 0;
-    background-color: white;
+    background-color: #bdd3d4;
     font-family: sans-serif;
     border: solid lightblue 2px;
     text-align: center;
@@ -18,7 +18,7 @@ export default styled.div`
   }
   .list {
     position: relative;
-    width: min(450px, 100vw - 20px);
+    width: min(450px, 100% - 20px);
     padding: 10px;
     box-sizing: border-box;
     text-align: center;

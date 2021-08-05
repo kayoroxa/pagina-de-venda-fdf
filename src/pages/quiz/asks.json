@@ -39,5 +39,23 @@
     ],
     "right": 4,
     "help": "eu teria significa i would have ou na forma contraída: i'd have, você tem dificuldade com would"
+  },
+  {
+    "ask": ["qual a tradução correta para:", "eu poderia ter isso!"],
+    "answer": [
+      "i would can have it",
+      "i did can have it",
+      "i could have it",
+      "i'd can have it",
+      "i couldn't have it"
+    ],
+    "right": 2,
+    "help": "poder no passado, ou no tempo 'ria' se usa could, q é a junção de can + would"
+  },
+  {
+    "ask": ["O que está errado na frase a seguir:", "i'll never done that"],
+    "answer": ["that", "never", "done", "i'll"],
+    "right": 2,
+    "help": "não se pode usar done, porque done é passado de do, e quando tem i'll quer dizer que a frase está no futuro"
   }
 ]

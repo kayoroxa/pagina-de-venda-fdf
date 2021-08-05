@@ -1,13 +1,18 @@
-import { useState } from 'react'
+import { useState, useMemo } from 'react'
 import QuizSession from './components/QuizSession'
 LinearProgress
 import { LinearProgress } from '@material-ui/core'
-import templateAsks from './asks.json'
+import templateAsksJson from './asks.json'
+import QuizContainerStyle from './QuizContainer.style'
+import QuizInfo from './components/QuizInfo'
+import _ from 'lodash'
 
 export default function quiz() {
+  const templateAsks = useMemo(() => _.sampleSize(templateAsksJson, 10), [])
   const [indexAnswer, setIndexAnswer] = useState(0)
   const [countAnswersRight, setCountAnswersRight] = useState(0)
   const [finishedQuiz, setFinishedQuiz] = useState(false)
+  const [started, setStarted] = useState(false)
 
   const handlerAnswer = ({ didRight }: { didRight: boolean }) => {
     const trueSize = indexAnswer + 1 < templateAsks.length
@@ -20,17 +25,27 @@ export default function quiz() {
     }, 1000)
   }
 
+  const handleStart = () => {
+    setStarted(true)
+  }
   return (
-    <div>
-      {/* <h1>Right {countAnswersRight}</h1> */}
-      <span>
-        {indexAnswer + 1} / {templateAsks.length}
-      </span>
-      <LinearProgress
-        variant="determinate"
-        value={!finishedQuiz ? (indexAnswer * 100) / templateAsks.length : 100}
-      />
-      {!finishedQuiz && (
+    <QuizContainerStyle>
+      {!started && <QuizInfo option="start-info" handleStart={handleStart} />}
+      {started && (
+        <span>
+          {indexAnswer + 1} / {templateAsks.length}
+        </span>
+      )}
+      {started && (
+        <LinearProgress
+          variant="determinate"
+          value={
+            !finishedQuiz ? (indexAnswer * 100) / templateAsks.length : 100
+          }
+        />
+      )}
+
+      {!finishedQuiz && started && (
         <QuizSession
           ask={templateAsks[indexAnswer].ask}
           answers={templateAsks[indexAnswer].answer}
@@ -38,21 +53,9 @@ export default function quiz() {
           onEnd={handlerAnswer}
         />
       )}
-      {finishedQuiz && (
-        <div>
-          <div>FIM Você Acertou {countAnswersRight}</div>
-          <div>
-            Recomendo para você o curso completo de tempo verbal no inglês
-          </div>
-          <div>
-            Pois não adianta saber as palavras mais não saber montar frases com
-            elas
-          </div>
-          <button>
-            <a href="https://formuladafluencia.vercel.app/">CONHECER O CURSO</a>
-          </button>
-        </div>
+      {finishedQuiz && started && (
+        <QuizInfo option="end-info" countAnswersRight={countAnswersRight} />
       )}
-    </div>
+    </QuizContainerStyle>
   )
 }
