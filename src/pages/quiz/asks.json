@@ -1,0 +1,43 @@
+[
+  {
+    "ask": [
+      "O que está ERRADO na frase a seguir?",
+      "\"He were doing the exercises\""
+    ],
+    "answer": ["the", "he", "doing", "exercises", "were", "doing"],
+    "right": 4,
+    "help": "Diferença entre were e was"
+  },
+  {
+    "ask": ["O que significa i wonder"],
+    "answer": ["Eu desejo", "Eu quero", "eu prefiro", "eu me pergunto"],
+    "right": 3
+  },
+  {
+    "ask": ["qual a continuação correta da frase:", "They'd go, _______"],
+    "answer": ["wouldn't they", "would they", "haven't they", "have they"],
+    "right": 0
+  },
+  {
+    "ask": ["qual a tradução correta para:", "eu nunca estive no japão"],
+    "answer": [
+      "i'd never be to japan",
+      "i've never been to japan",
+      "i never been to japan",
+      "i would be to japan"
+    ],
+    "right": 1
+  },
+  {
+    "ask": ["qual a tradução correta para:", "eu teria uma casa"],
+    "answer": [
+      "i'll have a house",
+      "i had a house",
+      "i did have a house",
+      "i goona have a house",
+      "i'd have a house"
+    ],
+    "right": 4,
+    "help": "eu teria significa i would have ou na forma contraída: i'd have, você tem dificuldade com would"
+  }
+]
