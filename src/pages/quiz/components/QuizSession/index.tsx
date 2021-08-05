@@ -43,13 +43,13 @@ export default function QuizSession({
   return (
     <Style>
       <div className="quiz-session">
-        {ask.map((linha, index) => (
+        {ask?.map((linha, index) => (
           <h1 className="ask" key={index}>
             {linha}
           </h1>
         ))}
         <div className="list" ref={listRef}>
-          {answers.map((answer, index) => (
+          {answers?.map((answer, index) => (
             <div
               onClick={canAnswer ? handleClick : () => {}}
               data-index={index}

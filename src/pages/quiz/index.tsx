@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import QuizSession from './components/QuizSession'
 LinearProgress
 import { LinearProgress } from '@material-ui/core'
