@@ -1,6 +1,10 @@
 import styled from 'styled-components'
 
 export default styled.div`
+  * {
+    margin: 0;
+    padding: 0;
+  }
   .quiz-session {
     margin: 0;
     padding: 0;
@@ -14,7 +18,7 @@ export default styled.div`
   }
   .list {
     position: relative;
-    width: 450px;
+    width: min(450px, 100vw - 20px);
     padding: 10px;
     box-sizing: border-box;
     text-align: center;

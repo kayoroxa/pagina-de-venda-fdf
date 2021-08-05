@@ -22,10 +22,10 @@ export default function quiz() {
 
   return (
     <div>
-      <h1>Right {countAnswersRight}</h1>
-      <h1>
+      {/* <h1>Right {countAnswersRight}</h1> */}
+      <span>
         {indexAnswer + 1} / {templateAsks.length}
-      </h1>
+      </span>
       <LinearProgress
         variant="determinate"
         value={!finishedQuiz ? (indexAnswer * 100) / templateAsks.length : 100}
@@ -38,7 +38,21 @@ export default function quiz() {
           onEnd={handlerAnswer}
         />
       )}
-      {finishedQuiz && <div>FIM Você Acertou {countAnswersRight}</div>}
+      {finishedQuiz && (
+        <div>
+          <div>FIM Você Acertou {countAnswersRight}</div>
+          <div>
+            Recomendo para você o curso completo de tempo verbal no inglês
+          </div>
+          <div>
+            Pois não adianta saber as palavras mais não saber montar frases com
+            elas
+          </div>
+          <button>
+            <a href="https://formuladafluencia.vercel.app/">CONHECER O CURSO</a>
+          </button>
+        </div>
+      )}
     </div>
   )
 }
