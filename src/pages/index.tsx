@@ -70,6 +70,51 @@ export default function Home() {
       <Grid container spacing={1} alignItems="center" justify="flex-end">
         <Grid item lg={7} md={7} sm={12} xs={12}>
           <Paper elevation={3} className="video">
+            <div
+              className="block-video"
+              style={{
+                width: '100%',
+                height: '20%',
+                top: '0',
+                position: 'absolute',
+                zIndex: 9999,
+              }}
+            />
+            <div
+              className="block-video"
+              style={{
+                // backgroundColor: '#ff0000',
+                width: '100%',
+                height: '23%',
+                top: '58%',
+                position: 'absolute',
+                zIndex: 9999,
+              }}
+            />
+            <div
+              className="block-video"
+              style={{
+                // backgroundColor: '#ff0000',
+                width: '30%',
+                height: '10%',
+                bottom: '0%',
+                right: '0%',
+                position: 'absolute',
+                zIndex: 9999,
+              }}
+            />
+            {/* <div
+              className="block-video"
+              style={{
+                backgroundColor: '#ff0000',
+                width: '18%',
+                height: '10%',
+                bottom: '0%',
+                left: '0%',
+                position: 'absolute',
+                zIndex: 9999,
+              }}
+            /> */}
             <Video url="https://www.youtube-nocookie.com/embed/u6K7cr_-mMY" />
           </Paper>
         </Grid>
