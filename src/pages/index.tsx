@@ -94,9 +94,9 @@ export default function Home() {
             <div
               className="block-video"
               style={{
-                // backgroundColor: '#ff0000',
+                backgroundColor: '#ff0000',
                 width: '30%',
-                height: '10%',
+                height: 'min(20%, 30px)',
                 bottom: '0%',
                 right: '0%',
                 position: 'absolute',
