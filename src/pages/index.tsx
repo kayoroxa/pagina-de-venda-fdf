@@ -63,14 +63,14 @@ export default function Home() {
     <MainStyle>
       <div className="title separado">
         <h1>
-          [DESCUBRA] como eu fiquei <span>FLUENTE</span> no inglês em{' '}
-          <span>4 MESES</span> sem sair de casa
+          O único curso que você vai precisar para <span>ficar fluente</span> no
+          inglês
         </h1>
       </div>
       <Grid container spacing={1} alignItems="center" justify="flex-end">
         <Grid item lg={7} md={7} sm={12} xs={12}>
           <Paper elevation={3} className="video">
-            <Video url="https://www.youtube-nocookie.com/embed/5EImG1BR0Hs" />
+            <Video url="https://www.youtube-nocookie.com/embed/u6K7cr_-mMY" />
           </Paper>
         </Grid>
         <Grid item lg={5} md={5} sm={12} xs={12}>
@@ -89,7 +89,7 @@ export default function Home() {
         className={classes.buttonFill}
         startIcon={<CheckCircleIcon />}
       >
-        QUERO FICAR FLUENTE
+        QUERO TER ACESSO AO CURSO
       </Button>
 
       <div className="ao-redor">
@@ -148,7 +148,7 @@ export default function Home() {
             startIcon={<CheckCircleIcon />}
             // fullWidth
           >
-            QUERO FICAR FLUENTE
+            QUERO TER ACESSO AO CURSO
           </Button>
         </div>
       </Hidden>

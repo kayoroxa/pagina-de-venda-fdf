@@ -5,11 +5,12 @@ import ListItem from '@material-ui/core/ListItem'
 import ListItemText from '@material-ui/core/ListItemText'
 import ListItemAvatar from '@material-ui/core/ListItemAvatar'
 import Avatar from '@material-ui/core/Avatar'
-import CardGiftcardIcon from '@material-ui/icons/CardGiftcard'
+// import CardGiftcardIcon from '@material-ui/icons/CardGiftcard'
 import AllInclusiveIcon from '@material-ui/icons/AllInclusive'
 import TimelapseIcon from '@material-ui/icons/Timelapse'
 import CheckCircleIcon from '@material-ui/icons/CheckCircle'
-import FlashOnIcon from '@material-ui/icons/FlashOn'
+import InsightsIcon from '@mui/icons-material/Insights'
+import FlashOnIcon from '@mui/icons-material/FlashOn'
 
 const useStyles = makeStyles(() =>
   createStyles({
@@ -41,8 +42,8 @@ export default function ListItens() {
   return (
     <List className={classes.root}>
       <Item
-        icon={<CardGiftcardIcon />}
-        text="Grupo para praticar no telegram"
+        icon={<InsightsIcon />}
+        text="Fique fluente utilizando os padrões coringas do inglês"
       />
       <Item
         icon={<AllInclusiveIcon />}
@@ -50,15 +51,15 @@ export default function ListItens() {
       />
       <Item
         icon={<TimelapseIcon />}
-        text="Aprenda montar frase em qualquer tempo verbal"
+        text="Consiga entender nativos falando em qualquer velocidade"
       />
       <Item
         icon={<CheckCircleIcon />}
-        text="Fique fluente no inglês de uma vez por toda"
+        text="Não importa seu nível atual no inglês"
       />
       <Item
         icon={<FlashOnIcon />}
-        text="Aprenda tudo necessário do inglês em 60 aulas"
+        text="Aprenda apenas o necessário para ser fluente, em pouco tempo, sem enrolação"
       />
     </List>
   )
