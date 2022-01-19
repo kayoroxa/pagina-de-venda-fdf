@@ -109,9 +109,9 @@ export default function Home() {
                   minWidth: '100%',
                   height: '100%',
                 }}
-                allowfullscreen="true"
+                allowFullScreen={true}
                 src="https://if.cdn.spotlightr.com/watch/MTIwNTY1OA==?fallback=true"
-                frameborder="0"
+                frameBorder="0"
                 scrolling="no"
                 name="videoPlayerframe"
               ></iframe>
