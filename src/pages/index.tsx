@@ -28,7 +28,8 @@ const useStyles = makeStyles({
     backgroundColor: '#fff',
     color: colorButton,
     borderColor: colorButton,
-    fontSize: 'min(5vw, 20px)',
+    // fontSize: 'min(5vw, 20px)',
+    fontSize: 'min(4vw, 17px)',
     borderRadius: '40px',
     width: 'min(90vw, 600px)',
     height: 'max(8vh, 70px)',
@@ -41,7 +42,7 @@ const useStyles = makeStyles({
     backgroundColor: colorButton,
     color: '#fff',
     borderColor: colorButton,
-    fontSize: 'min(5vw, 20px)',
+    fontSize: 'min(4vw, 17px)',
     borderRadius: '40px',
     width: 'min(90vw, 500px)',
     height: 'max(8vh, 70px)',
@@ -190,13 +191,12 @@ export default function Home() {
       </Paper>
 
       <Hidden mdUp>
-        <div className="fixed" style={{ opacity: showCall }}>
+        <div className="fixed" style={{ opacity: showCall, zIndex: 99 }}>
           <Button
             href={linkCheckOut}
             variant="outlined"
             // color="default"
             size="large"
-            style={{ fontSize: 'min(4vw, 17px)' }}
             className={classes.button}
             startIcon={<WhatsAppIcon />}
             // fullWidth
