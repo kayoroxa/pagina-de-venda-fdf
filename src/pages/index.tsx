@@ -2,15 +2,20 @@ import { useState } from 'react'
 import MainStyle from '../styles/index.style'
 import Button from '@material-ui/core/Button'
 // import CheckCircleIcon from '@material-ui/icons/CheckCircle'
-import BlockIcon from '@mui/icons-material/Block'
+// import BlockIcon from '@mui/icons-material/Block'
+import WhatsAppIcon from '@mui/icons-material/WhatsApp'
 import { Grid, Hidden, makeStyles, Paper, Typography } from '@material-ui/core'
 import ListItens from '../components/ListItens'
 import Video from '../components/Video'
 import Valor from '../components/Valor'
 import Fac from '../components/Fac'
 
-const colorButton = '#b3b3b3'
-// const colorButton = '#5fb100'
+// const colorButton = '#b3b3b3'
+const colorButton = '#0079b1'
+const buttonTitle = 'Seja avisado de novas vagas!'
+
+const linkCheckOut =
+  'https://api.whatsapp.com/send?phone=5581975010604&text=Quero%20ser%20avisado%20quando%20sair%20vagas%20novas!!%20%F0%9F%98%80'
 
 const useStyles = makeStyles({
   flexGrow: {
@@ -48,8 +53,6 @@ const useStyles = makeStyles({
 })
 
 export default function Home() {
-  // const linkCheckOut =
-  //   'https://pay.hotmart.com/Y51115808H?off=9g7hziuc&checkoutMode=10'
   const classes = useStyles()
   const [showCall, setShowCall] = useState(0)
   var myScrollFunc = function () {
@@ -131,14 +134,14 @@ export default function Home() {
       </Grid>
 
       <Button
-        // href={linkCheckOut}
+        href={linkCheckOut}
         variant="outlined"
         // color="default"
         size="large"
         className={classes.buttonFill}
-        startIcon={<BlockIcon />}
+        startIcon={<WhatsAppIcon />}
       >
-        Sem vagas no momento!
+        {buttonTitle}
       </Button>
 
       <div className="ao-redor">
@@ -189,15 +192,15 @@ export default function Home() {
       <Hidden mdUp>
         <div className="fixed" style={{ opacity: showCall }}>
           <Button
-            // href={linkCheckOut}
+            href={linkCheckOut}
             variant="outlined"
             // color="default"
             size="large"
             className={classes.button}
-            startIcon={<BlockIcon />}
+            startIcon={<WhatsAppIcon />}
             // fullWidth
           >
-            Sem vagas no momento!
+            {buttonTitle}
           </Button>
         </div>
       </Hidden>
@@ -220,7 +223,7 @@ export default function Home() {
             </Grid>
             <Grid item md={3} lg={3} className="show">
               <Button
-                // href={linkCheckOut}
+                href={linkCheckOut}
                 variant="outlined"
                 // color="default"
                 size="large"
@@ -230,24 +233,24 @@ export default function Home() {
                   width: '100%',
                   height: 'auto',
                 }}
-                startIcon={<BlockIcon />}
+                startIcon={<WhatsAppIcon />}
                 fullWidth
               >
-                Sem vagas no momento!
+                {buttonTitle}
               </Button>
             </Grid>
           </Grid>
         </div>
 
         <Button
-          // href={linkCheckOut}
+          href={linkCheckOut}
           variant="outlined"
           // color="default"
           size="large"
           className={classes.buttonFill}
-          startIcon={<BlockIcon />}
+          startIcon={<WhatsAppIcon />}
         >
-          Sem vagas no momento!
+          {buttonTitle}
         </Button>
       </Hidden>
     </MainStyle>
