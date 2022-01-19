@@ -48,8 +48,8 @@ const useStyles = makeStyles({
 })
 
 export default function Home() {
-  const linkCheckOut =
-    'https://pay.hotmart.com/Y51115808H?off=9g7hziuc&checkoutMode=10'
+  // const linkCheckOut =
+  //   'https://pay.hotmart.com/Y51115808H?off=9g7hziuc&checkoutMode=10'
   const classes = useStyles()
   const [showCall, setShowCall] = useState(0)
   var myScrollFunc = function () {
