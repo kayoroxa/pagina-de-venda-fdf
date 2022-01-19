@@ -196,6 +196,7 @@ export default function Home() {
             variant="outlined"
             // color="default"
             size="large"
+            style={{ fontSize: 'min(4vw, 17px)' }}
             className={classes.button}
             startIcon={<WhatsAppIcon />}
             // fullWidth
