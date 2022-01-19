@@ -90,8 +90,8 @@ export default function Home() {
                 className="block-video"
                 style={{
                   // backgroundColor: '#ff0000',
-                  width: '22%',
-                  height: '15%',
+                  width: 'max(22%, 140px)',
+                  height: 'max(15%, 34px)',
                   bottom: '0',
                   right: 0,
                   position: 'absolute',
@@ -109,7 +109,7 @@ export default function Home() {
                   minWidth: '100%',
                   height: '100%',
                 }}
-                allowFullScreen={true}
+                allowFullScreen={false}
                 src="https://if.cdn.spotlightr.com/watch/MTIwNTY1OA==?fallback=true"
                 frameBorder="0"
                 scrolling="no"
