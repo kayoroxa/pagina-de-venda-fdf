@@ -6,7 +6,7 @@ import Button from '@material-ui/core/Button'
 import WhatsAppIcon from '@mui/icons-material/WhatsApp'
 import { Grid, Hidden, makeStyles, Paper, Typography } from '@material-ui/core'
 import ListItens from '../components/ListItens'
-import Video from '../components/Video'
+// import Video from '../components/Video'
 import Valor from '../components/Valor'
 import Fac from '../components/Fac'
 
