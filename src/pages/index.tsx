@@ -1,12 +1,16 @@
 import { useState } from 'react'
 import MainStyle from '../styles/index.style'
 import Button from '@material-ui/core/Button'
-import CheckCircleIcon from '@material-ui/icons/CheckCircle'
+// import CheckCircleIcon from '@material-ui/icons/CheckCircle'
+import BlockIcon from '@mui/icons-material/Block'
 import { Grid, Hidden, makeStyles, Paper, Typography } from '@material-ui/core'
 import ListItens from '../components/ListItens'
 import Video from '../components/Video'
 import Valor from '../components/Valor'
 import Fac from '../components/Fac'
+
+const colorButton = '#b3b3b3'
+// const colorButton = '#5fb100'
 
 const useStyles = makeStyles({
   flexGrow: {
@@ -17,27 +21,27 @@ const useStyles = makeStyles({
   },
   button: {
     backgroundColor: '#fff',
-    color: '#5fb100',
-    borderColor: '#5fb100',
+    color: colorButton,
+    borderColor: colorButton,
     fontSize: 'min(5vw, 20px)',
     borderRadius: '40px',
     width: 'min(90vw, 500px)',
     height: 'max(8vh, 70px)',
     '&:hover': {
-      backgroundColor: '#5fb100',
+      backgroundColor: colorButton,
       color: '#fff',
     },
   },
   buttonFill: {
-    backgroundColor: '#5fb100',
+    backgroundColor: colorButton,
     color: '#fff',
-    borderColor: '#5fb100',
+    borderColor: colorButton,
     fontSize: 'min(5vw, 20px)',
     borderRadius: '40px',
     width: 'min(90vw, 500px)',
     height: 'max(8vh, 70px)',
     '&:hover': {
-      backgroundColor: '#7fcf23',
+      backgroundColor: colorButton,
       color: '#fff',
     },
   },
@@ -94,9 +98,9 @@ export default function Home() {
             <div
               className="block-video"
               style={{
-                backgroundColor: '#ff0000',
+                // backgroundColor: '#ff0000',
                 width: '30%',
-                height: 'min(20%, 30px)',
+                height: 'min(21%, 34px)',
                 bottom: '0%',
                 right: '0%',
                 position: 'absolute',
@@ -127,14 +131,14 @@ export default function Home() {
       </Grid>
 
       <Button
-        href={linkCheckOut}
+        // href={linkCheckOut}
         variant="outlined"
         // color="default"
         size="large"
         className={classes.buttonFill}
-        startIcon={<CheckCircleIcon />}
+        startIcon={<BlockIcon />}
       >
-        QUERO TER ACESSO AO CURSO
+        Sem vagas no momento!
       </Button>
 
       <div className="ao-redor">
@@ -144,7 +148,7 @@ export default function Home() {
         <img src="images/cartoes.png" />
       </div>
 
-      <div className="other-background">
+      {/* <div className="other-background">
         <div className="title">
           <h1>
             Veja o Formula Da Fluência <span>por dentro</span>!
@@ -153,7 +157,7 @@ export default function Home() {
         <Paper elevation={3} className="video">
           <Video url="https://www.youtube-nocookie.com/embed/DT3es07ISuA" />
         </Paper>
-      </div>
+      </div> */}
 
       <Fac />
 
@@ -185,15 +189,15 @@ export default function Home() {
       <Hidden mdUp>
         <div className="fixed" style={{ opacity: showCall }}>
           <Button
-            href={linkCheckOut}
+            // href={linkCheckOut}
             variant="outlined"
             // color="default"
             size="large"
             className={classes.button}
-            startIcon={<CheckCircleIcon />}
+            startIcon={<BlockIcon />}
             // fullWidth
           >
-            QUERO TER ACESSO AO CURSO
+            Sem vagas no momento!
           </Button>
         </div>
       </Hidden>
@@ -216,7 +220,7 @@ export default function Home() {
             </Grid>
             <Grid item md={3} lg={3} className="show">
               <Button
-                href={linkCheckOut}
+                // href={linkCheckOut}
                 variant="outlined"
                 // color="default"
                 size="large"
@@ -226,24 +230,24 @@ export default function Home() {
                   width: '100%',
                   height: 'auto',
                 }}
-                startIcon={<CheckCircleIcon />}
+                startIcon={<BlockIcon />}
                 fullWidth
               >
-                QUERO FICAR FLUENTE
+                Sem vagas no momento!
               </Button>
             </Grid>
           </Grid>
         </div>
 
         <Button
-          href={linkCheckOut}
+          // href={linkCheckOut}
           variant="outlined"
           // color="default"
           size="large"
           className={classes.buttonFill}
-          startIcon={<CheckCircleIcon />}
+          startIcon={<BlockIcon />}
         >
-          OK. QUERO FICAR FLUENTE
+          Sem vagas no momento!
         </Button>
       </Hidden>
     </MainStyle>
