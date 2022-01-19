@@ -1,12 +1,16 @@
 import { useState } from 'react'
 import MainStyle from '../styles/index.style'
 import Button from '@material-ui/core/Button'
-import CheckCircleIcon from '@material-ui/icons/CheckCircle'
+// import CheckCircleIcon from '@material-ui/icons/CheckCircle'
+import BlockIcon from '@mui/icons-material/Block'
 import { Grid, Hidden, makeStyles, Paper, Typography } from '@material-ui/core'
 import ListItens from '../components/ListItens'
 import Video from '../components/Video'
 import Valor from '../components/Valor'
 import Fac from '../components/Fac'
+
+const colorButton = '#b3b3b3'
+// const colorButton = '#5fb100'
 
 const useStyles = makeStyles({
   flexGrow: {
@@ -17,27 +21,27 @@ const useStyles = makeStyles({
   },
   button: {
     backgroundColor: '#fff',
-    color: '#5fb100',
-    borderColor: '#5fb100',
+    color: colorButton,
+    borderColor: colorButton,
     fontSize: 'min(5vw, 20px)',
     borderRadius: '40px',
     width: 'min(90vw, 500px)',
     height: 'max(8vh, 70px)',
     '&:hover': {
-      backgroundColor: '#5fb100',
+      backgroundColor: colorButton,
       color: '#fff',
     },
   },
   buttonFill: {
-    backgroundColor: '#5fb100',
+    backgroundColor: colorButton,
     color: '#fff',
-    borderColor: '#5fb100',
+    borderColor: colorButton,
     fontSize: 'min(5vw, 20px)',
     borderRadius: '40px',
     width: 'min(90vw, 500px)',
     height: 'max(8vh, 70px)',
     '&:hover': {
-      backgroundColor: '#7fcf23',
+      backgroundColor: colorButton,
       color: '#fff',
     },
   },
@@ -63,14 +67,59 @@ export default function Home() {
     <MainStyle>
       <div className="title separado">
         <h1>
-          [VEJA] o <span>CURSO COMPLETO DE INGLÊS</span> formula da fluência{' '}
-          <span>POR DENTRO</span>
+          O único curso que você vai precisar para <span>ficar fluente</span> no
+          inglês
         </h1>
       </div>
       <Grid container spacing={1} alignItems="center" justify="flex-end">
         <Grid item lg={7} md={7} sm={12} xs={12}>
           <Paper elevation={3} className="video">
-            <Video url="https://www.youtube-nocookie.com/embed/DT3es07ISuA" />
+            <div
+              className="block-video"
+              style={{
+                width: '100%',
+                height: '20%',
+                top: '0',
+                position: 'absolute',
+                zIndex: 9999,
+              }}
+            />
+            <div
+              className="block-video"
+              style={{
+                // backgroundColor: '#ff0000',
+                width: '100%',
+                height: '23%',
+                top: '58%',
+                position: 'absolute',
+                zIndex: 9999,
+              }}
+            />
+            <div
+              className="block-video"
+              style={{
+                // backgroundColor: '#ff0000',
+                width: '30%',
+                height: 'min(21%, 34px)',
+                bottom: '0%',
+                right: '0%',
+                position: 'absolute',
+                zIndex: 9999,
+              }}
+            />
+            {/* <div
+              className="block-video"
+              style={{
+                backgroundColor: '#ff0000',
+                width: '18%',
+                height: '10%',
+                bottom: '0%',
+                left: '0%',
+                position: 'absolute',
+                zIndex: 9999,
+              }}
+            /> */}
+            <Video url="https://www.youtube-nocookie.com/embed/u6K7cr_-mMY" />
           </Paper>
         </Grid>
         <Grid item lg={5} md={5} sm={12} xs={12}>
@@ -82,14 +131,14 @@ export default function Home() {
       </Grid>
 
       <Button
-        href={linkCheckOut}
+        // href={linkCheckOut}
         variant="outlined"
         // color="default"
         size="large"
         className={classes.buttonFill}
-        startIcon={<CheckCircleIcon />}
+        startIcon={<BlockIcon />}
       >
-        QUERO FICAR FLUENTE
+        Sem vagas no momento!
       </Button>
 
       <div className="ao-redor">
@@ -140,15 +189,15 @@ export default function Home() {
       <Hidden mdUp>
         <div className="fixed" style={{ opacity: showCall }}>
           <Button
-            href={linkCheckOut}
+            // href={linkCheckOut}
             variant="outlined"
             // color="default"
             size="large"
             className={classes.button}
-            startIcon={<CheckCircleIcon />}
+            startIcon={<BlockIcon />}
             // fullWidth
           >
-            QUERO FICAR FLUENTE
+            Sem vagas no momento!
           </Button>
         </div>
       </Hidden>
@@ -171,7 +220,7 @@ export default function Home() {
             </Grid>
             <Grid item md={3} lg={3} className="show">
               <Button
-                href={linkCheckOut}
+                // href={linkCheckOut}
                 variant="outlined"
                 // color="default"
                 size="large"
@@ -181,24 +230,24 @@ export default function Home() {
                   width: '100%',
                   height: 'auto',
                 }}
-                startIcon={<CheckCircleIcon />}
+                startIcon={<BlockIcon />}
                 fullWidth
               >
-                QUERO FICAR FLUENTE
+                Sem vagas no momento!
               </Button>
             </Grid>
           </Grid>
         </div>
 
         <Button
-          href={linkCheckOut}
+          // href={linkCheckOut}
           variant="outlined"
           // color="default"
           size="large"
           className={classes.buttonFill}
-          startIcon={<CheckCircleIcon />}
+          startIcon={<BlockIcon />}
         >
-          OK. QUERO FICAR FLUENTE
+          Sem vagas no momento!
         </Button>
       </Hidden>
     </MainStyle>
