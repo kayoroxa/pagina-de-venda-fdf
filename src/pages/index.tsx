@@ -30,7 +30,7 @@ const useStyles = makeStyles({
     borderColor: colorButton,
     fontSize: 'min(5vw, 20px)',
     borderRadius: '40px',
-    width: 'min(90vw, 500px)',
+    width: 'min(90vw, 600px)',
     height: 'max(8vh, 70px)',
     '&:hover': {
       backgroundColor: colorButton,
@@ -206,14 +206,14 @@ export default function Home() {
       </Hidden>
 
       <Hidden smDown>
-        <div className="fixed-pc" style={{ opacity: showCall }}>
+        <div className="fixed-pc" style={{ opacity: showCall, zIndex: 99 }}>
           <Grid
             container
             // spacing={2}
             alignItems="center"
             justify="space-around"
           >
-            <Grid item md={4} lg={4} className="show">
+            <Grid item md={4} lg={3} className="show">
               <Typography variant="h6">
                 Invista na sua conquista e descubra como ficar fluente no inglês
               </Typography>
@@ -221,7 +221,7 @@ export default function Home() {
             <Grid item md={4} lg={3} className="show">
               <Valor removeOldValue notColor />
             </Grid>
-            <Grid item md={3} lg={3} className="show">
+            <Grid item md={3} lg={4} className="show">
               <Button
                 href={linkCheckOut}
                 variant="outlined"
@@ -229,7 +229,7 @@ export default function Home() {
                 size="large"
                 className={classes.button}
                 style={{
-                  fontSize: 'min(1.4vw, 20px)',
+                  fontSize: 'min(1.2vw, 19px)',
                   width: '100%',
                   height: 'auto',
                 }}
