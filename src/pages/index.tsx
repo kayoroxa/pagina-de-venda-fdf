@@ -79,51 +79,43 @@ export default function Home() {
         <Grid item lg={7} md={7} sm={12} xs={12}>
           <Paper elevation={3} className="video">
             <div
-              className="block-video"
               style={{
-                width: '100%',
-                height: '20%',
-                top: '0',
-                position: 'absolute',
-                zIndex: 9999,
+                position: 'relative',
+                width: '1px',
+                minWidth: '100%',
+                paddingBottom: '56.25%',
               }}
-            />
-            <div
-              className="block-video"
-              style={{
-                // backgroundColor: '#ff0000',
-                width: '100%',
-                height: '23%',
-                top: '58%',
-                position: 'absolute',
-                zIndex: 9999,
-              }}
-            />
-            <div
-              className="block-video"
-              style={{
-                // backgroundColor: '#ff0000',
-                width: '30%',
-                height: 'min(21%, 34px)',
-                bottom: '0%',
-                right: '0%',
-                position: 'absolute',
-                zIndex: 9999,
-              }}
-            />
-            {/* <div
-              className="block-video"
-              style={{
-                backgroundColor: '#ff0000',
-                width: '18%',
-                height: '10%',
-                bottom: '0%',
-                left: '0%',
-                position: 'absolute',
-                zIndex: 9999,
-              }}
-            /> */}
-            <Video url="https://www.youtube-nocookie.com/embed/u6K7cr_-mMY" />
+            >
+              <div
+                className="block-video"
+                style={{
+                  // backgroundColor: '#ff0000',
+                  width: '22%',
+                  height: '15%',
+                  bottom: '0',
+                  right: 0,
+                  position: 'absolute',
+                  zIndex: 9999,
+                }}
+              />
+              <iframe
+                allow="autoplay"
+                className="spotlightr"
+                allowTransparency={true}
+                style={{
+                  //"width: 1px; min-width: 100%; height: 100%; position: absolute"
+                  position: 'absolute',
+                  width: '1px',
+                  minWidth: '100%',
+                  height: '100%',
+                }}
+                allowfullscreen="true"
+                src="https://if.cdn.spotlightr.com/watch/MTIwNTY1OA==?fallback=true"
+                frameborder="0"
+                scrolling="no"
+                name="videoPlayerframe"
+              ></iframe>
+            </div>
           </Paper>
         </Grid>
         <Grid item lg={5} md={5} sm={12} xs={12}>
