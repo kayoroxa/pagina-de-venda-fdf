@@ -53,7 +53,7 @@ export default function Valor({ removeOldValue, notColor }: Props) {
           </div>
           <div className="right">
             <b>
-              28,<span style={{ fontSize: '40px' }}>94</span>
+              31,<span style={{ fontSize: '40px' }}>86</span>
             </b>
           </div>
         </div>
