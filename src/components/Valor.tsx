@@ -33,6 +33,14 @@ export const Container = styled.div<SProps>`
       bottom: 0;
     }
   }
+
+  .avista {
+    color: ${({ notColor }) => !notColor && 'orange'};
+    text-align: center;
+    width: 100%;
+    margin: 0;
+    font-size: 17px;
+  }
 `
 interface Props {
   removeOldValue?: boolean
@@ -57,6 +65,9 @@ export default function Valor({ removeOldValue, notColor }: Props) {
             </b>
           </div>
         </div>
+        <p className="avista">
+          Ou <strong>R$327,00</strong> a vista.
+        </p>
       </div>
     </Container>
   )
