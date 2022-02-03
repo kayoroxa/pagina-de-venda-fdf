@@ -3,7 +3,8 @@ import MainStyle from '../styles/index.style'
 import Button from '@material-ui/core/Button'
 // import CheckCircleIcon from '@material-ui/icons/CheckCircle'
 // import BlockIcon from '@mui/icons-material/Block'
-import WhatsAppIcon from '@mui/icons-material/WhatsApp'
+// import WhatsAppIcon from '@mui/icons-material/WhatsApp'
+import CheckBoxIcon from '@mui/icons-material/CheckBox'
 import { Grid, Hidden, makeStyles, Paper, Typography } from '@material-ui/core'
 import ListItens from '../components/ListItens'
 // import Video from '../components/Video'
@@ -11,11 +12,12 @@ import Valor from '../components/Valor'
 import Fac from '../components/Fac'
 
 // const colorButton = '#b3b3b3'
-const colorButton = '#0079b1'
-const buttonTitle = 'Seja avisado de novas vagas!'
+const colorButton = '#00bb3e'
+const buttonTitle = 'Se cadastrar agora!'
 
 const linkCheckOut =
-  'https://api.whatsapp.com/send?phone=5581975010604&text=Quero%20ser%20avisado%20quando%20sair%20vagas%20novas!!%20%F0%9F%98%80'
+  'https://pay.hotmart.com/Y51115808H?off=fzv3lnkr&checkoutMode=10'
+// 'https://api.whatsapp.com/send?phone=5581975010604&text=Quero%20ser%20avisado%20quando%20sair%20vagas%20novas!!%20%F0%9F%98%80'
 
 const useStyles = makeStyles({
   flexGrow: {
@@ -132,7 +134,7 @@ export default function Home() {
         // color="default"
         size="large"
         className={classes.buttonFill}
-        startIcon={<WhatsAppIcon />}
+        startIcon={<CheckBoxIcon />}
       >
         {buttonTitle}
       </Button>
@@ -190,7 +192,7 @@ export default function Home() {
             // color="default"
             size="large"
             className={classes.button}
-            startIcon={<WhatsAppIcon />}
+            startIcon={<CheckBoxIcon />}
             // fullWidth
           >
             {buttonTitle}
@@ -226,7 +228,7 @@ export default function Home() {
                   width: '100%',
                   height: 'auto',
                 }}
-                startIcon={<WhatsAppIcon />}
+                startIcon={<CheckBoxIcon />}
                 fullWidth
               >
                 {buttonTitle}
@@ -241,7 +243,7 @@ export default function Home() {
           // color="default"
           size="large"
           className={classes.buttonFill}
-          startIcon={<WhatsAppIcon />}
+          startIcon={<CheckBoxIcon />}
         >
           {buttonTitle}
         </Button>
