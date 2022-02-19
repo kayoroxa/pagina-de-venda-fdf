@@ -16,7 +16,7 @@ const colorButton = '#00bb3e'
 const buttonTitle = 'Se cadastrar agora!'
 
 const linkCheckOut =
-  'https://pay.hotmart.com/Y51115808H?off=fzv3lnkr&checkoutMode=10'
+  'https://pay.hotmart.com/Y51115808H?off=fzv3lnkr&checkoutMode=10&split=12'
 // 'https://api.whatsapp.com/send?phone=5581975010604&text=Quero%20ser%20avisado%20quando%20sair%20vagas%20novas!!%20%F0%9F%98%80'
 
 const useStyles = makeStyles({
@@ -77,7 +77,7 @@ export default function Home() {
           inglês
         </h1>
       </div>
-      <Grid container spacing={1} alignItems="center" justify="flex-end">
+      <Grid container spacing={1} alignItems="center" justify="center">
         <Grid item lg={7} md={7} sm={12} xs={12}>
           <Paper elevation={3} className="video">
             <div
@@ -120,10 +120,10 @@ export default function Home() {
             </div>
           </Paper>
         </Grid>
-        <Grid item lg={5} md={5} sm={12} xs={12}>
+        <Grid item lg={4} md={5} sm={12} xs={12}>
           <Paper elevation={3} className="more">
             <ListItens />
-            <Valor removeOldValue={true} />
+            <Valor notColor />
           </Paper>
         </Grid>
       </Grid>
@@ -209,7 +209,7 @@ export default function Home() {
             justify="space-around"
           >
             <Grid item md={4} lg={3} className="show">
-              <Typography variant="h6">
+              <Typography variant="subtitle1">
                 Invista na sua conquista e descubra como ficar fluente no inglês
               </Typography>
             </Grid>
