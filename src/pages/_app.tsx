@@ -19,25 +19,25 @@ export default function MyApp(props: any) {
 
   return (
     <React.Fragment>
-      <Head>
-        <title>Formula Da Fluência</title>
-        <meta
-          name="viewport"
-          content="minimum-scale=1, initial-scale=1, width=device-width"
-        />
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-3G9X4JLLWX"
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-3G9X4JLLWX"
+        strategy="afterInteractive"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){window.dataLayer.push(arguments);}
           gtag('js', new Date());
 
           gtag('config', 'G-3G9X4JLLWX');
         `}
-        </Script>
+      </Script>
+      <Head>
+        <title>Formula Da Fluência</title>
+        <meta
+          name="viewport"
+          content="minimum-scale=1, initial-scale=1, width=device-width"
+        />
       </Head>
       <ThemeProvider theme={theme}>
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
