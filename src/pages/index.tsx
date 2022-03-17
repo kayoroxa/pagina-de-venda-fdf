@@ -10,13 +10,15 @@ import ListItens from '../components/ListItens'
 // import Video from '../components/Video'
 import Valor from '../components/Valor'
 import Fac from '../components/Fac'
+import { useRouter } from 'next/router'
 
 // const colorButton = '#b3b3b3'
 const colorButton = '#00bb3e'
 const buttonTitle = 'Se cadastrar agora!'
 
-const linkCheckOut =
+let linkCheckOut =
   'https://pay.hotmart.com/Y51115808H?off=fzv3lnkr&checkoutMode=10&split=12'
+
 // 'https://api.whatsapp.com/send?phone=5581975010604&text=Quero%20ser%20avisado%20quando%20sair%20vagas%20novas!!%20%F0%9F%98%80'
 
 const useStyles = makeStyles({
@@ -56,6 +58,10 @@ const useStyles = makeStyles({
 })
 
 export default function Home() {
+  const router = useRouter()
+  const { ref } = router.query
+  if (ref === 'E53339888M') linkCheckOut = 'https://bit.ly/34PctC3'
+
   const classes = useStyles()
   const [showCall, setShowCall] = useState(0)
   var myScrollFunc = function () {
