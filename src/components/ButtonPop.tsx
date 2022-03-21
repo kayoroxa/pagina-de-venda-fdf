@@ -102,7 +102,11 @@ export default function ButtonPop({ href, children }: IProps) {
 
   async function handleClickButton(href: string) {
     setIsLoading(true)
-    await axios.put(`/api/user/${phoneData}`)
+    try {
+      await axios.put(`/api/user/${phoneData}`)
+    } catch (err) {
+      console.log(err)
+    }
     location.href = href
   }
 
