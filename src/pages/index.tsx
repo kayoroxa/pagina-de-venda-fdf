@@ -1,10 +1,12 @@
 import { useState } from 'react'
+import { default as MUButton } from '@material-ui/core/Button'
 import MainStyle from '../styles/index.style'
-import Button from '@material-ui/core/Button'
+
 // import CheckCircleIcon from '@material-ui/icons/CheckCircle'
 // import BlockIcon from '@mui/icons-material/Block'
 // import WhatsAppIcon from '@mui/icons-material/WhatsApp'
 import CheckBoxIcon from '@mui/icons-material/CheckBox'
+import Button from '@material-ui/core/Button'
 import { Grid, Hidden, makeStyles, Paper, Typography } from '@material-ui/core'
 import ListItens from '../components/ListItens'
 // import Video from '../components/Video'
@@ -12,13 +14,14 @@ import Valor from '../components/Valor'
 import Fac from '../components/Fac'
 import { useRouter } from 'next/router'
 
+import ButtonPop from '../components/ButtonPop'
+
 // const colorButton = '#b3b3b3'
 const colorButton = '#00bb3e'
 const buttonTitle = 'Se cadastrar agora!'
 
 let linkCheckOut =
   'https://pay.hotmart.com/Y51115808H?off=fzv3lnkr&checkoutMode=10&split=12'
-
 // 'https://api.whatsapp.com/send?phone=5581975010604&text=Quero%20ser%20avisado%20quando%20sair%20vagas%20novas!!%20%F0%9F%98%80'
 
 const useStyles = makeStyles({
@@ -135,16 +138,22 @@ export default function Home() {
         </Grid>
       </Grid>
 
-      <Button
+      <ButtonPop
         href={linkCheckOut}
-        variant="outlined"
-        // color="default"
-        size="large"
-        className={classes.buttonFill}
-        startIcon={<CheckBoxIcon />}
+        colorButton={colorButton}
+        buttonTitle={buttonTitle}
       >
-        {buttonTitle}
-      </Button>
+        <MUButton
+          // href={linkCheckOut}
+          variant="outlined"
+          // color="default"
+          size="large"
+          className={classes.buttonFill}
+          startIcon={<CheckBoxIcon />}
+        >
+          {buttonTitle}
+        </MUButton>
+      </ButtonPop>
 
       <div className="ao-redor">
         <img src="images/comprasegura.png" />
@@ -193,17 +202,22 @@ export default function Home() {
 
       <Hidden mdUp>
         <div className="fixed" style={{ opacity: showCall, zIndex: 99 }}>
-          <Button
+          <ButtonPop
             href={linkCheckOut}
-            variant="outlined"
-            // color="default"
-            size="large"
-            className={classes.button}
-            startIcon={<CheckBoxIcon />}
-            // fullWidth
+            colorButton={colorButton}
+            buttonTitle={buttonTitle}
           >
-            {buttonTitle}
-          </Button>
+            <Button
+              variant="outlined"
+              // color="default"
+              size="large"
+              className={classes.button}
+              startIcon={<CheckBoxIcon />}
+              // fullWidth
+            >
+              {buttonTitle}
+            </Button>
+          </ButtonPop>
         </div>
       </Hidden>
 
@@ -224,36 +238,47 @@ export default function Home() {
               <Valor removeOldValue notColor />
             </Grid>
             <Grid item md={3} lg={4} className="show">
-              <Button
+              <ButtonPop
                 href={linkCheckOut}
-                variant="outlined"
-                // color="default"
-                size="large"
-                className={classes.button}
-                style={{
-                  fontSize: 'min(1.2vw, 19px)',
-                  width: '100%',
-                  height: 'auto',
-                }}
-                startIcon={<CheckBoxIcon />}
-                fullWidth
+                colorButton={colorButton}
+                buttonTitle={buttonTitle}
               >
-                {buttonTitle}
-              </Button>
+                <Button
+                  // href={linkCheckOut}
+                  variant="outlined"
+                  // color="default"
+                  size="large"
+                  className={classes.button}
+                  style={{
+                    fontSize: 'min(1.2vw, 19px)',
+                    width: '100%',
+                    height: 'auto',
+                  }}
+                  startIcon={<CheckBoxIcon />}
+                  fullWidth
+                >
+                  {buttonTitle}
+                </Button>
+              </ButtonPop>
             </Grid>
           </Grid>
         </div>
-
-        <Button
+        <ButtonPop
           href={linkCheckOut}
-          variant="outlined"
-          // color="default"
-          size="large"
-          className={classes.buttonFill}
-          startIcon={<CheckBoxIcon />}
+          colorButton={colorButton}
+          buttonTitle={buttonTitle}
         >
-          {buttonTitle}
-        </Button>
+          <Button
+            // href={linkCheckOut}
+            variant="outlined"
+            // color="default"
+            size="large"
+            className={classes.buttonFill}
+            startIcon={<CheckBoxIcon />}
+          >
+            {buttonTitle}
+          </Button>
+        </ButtonPop>
       </Hidden>
     </MainStyle>
   )
