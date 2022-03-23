@@ -55,12 +55,18 @@ export default function InputPhone({ onChange }: IProp) {
   }
 
   React.useEffect(() => {
-    console.log(values)
     if (onChange) onChange(values.textmask)
   }, [values.textmask])
 
   React.useEffect(() => {
     document.querySelector('input')?.blur()
+    const time = setTimeout(() => {
+      document.querySelector('input')?.focus()
+    }, 1500)
+
+    return () => {
+      clearTimeout(time)
+    }
   }, [])
 
   return (
@@ -72,10 +78,14 @@ export default function InputPhone({ onChange }: IProp) {
     //   }}
     // >
     <FormControl variant="standard" size="medium" fullWidth={true}>
-      <InputLabel htmlFor="formatted-text-mask-input">
-        Coloque seu Whatsapp Aqui
+      <InputLabel
+        htmlFor="formatted-text-mask-input"
+        style={{ fontSize: '130%' }}
+      >
+        Coloque seu Whatsapp Aqui...
       </InputLabel>
       <Input
+        inputProps={{ inputMode: 'numeric' }}
         // onFocus={e => {
         //   e.target.blur()
         // }}
