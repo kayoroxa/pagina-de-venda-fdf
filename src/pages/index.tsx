@@ -138,6 +138,7 @@ export default function Home() {
       </Grid>
 
       <ButtonPop
+        affiliated={ref === 'E53339888M'}
         href={linkCheckOut}
         showPopup={showPopupButton}
         colorButton={colorButton}
@@ -203,6 +204,7 @@ export default function Home() {
       <Hidden mdUp>
         <div className="fixed" style={{ opacity: showCall, zIndex: 99 }}>
           <ButtonPop
+            affiliated={ref === 'E53339888M'}
             href={linkCheckOut}
             showPopup={showPopupButton}
             colorButton={colorButton}
@@ -240,6 +242,7 @@ export default function Home() {
             </Grid>
             <Grid item md={3} lg={4} className="show">
               <ButtonPop
+                affiliated={ref === 'E53339888M'}
                 showPopup={showPopupButton}
                 href={linkCheckOut}
                 colorButton={colorButton}
@@ -266,6 +269,7 @@ export default function Home() {
           </Grid>
         </div>
         <ButtonPop
+          affiliated={ref === 'E53339888M'}
           showPopup={showPopupButton}
           href={linkCheckOut}
           colorButton={colorButton}

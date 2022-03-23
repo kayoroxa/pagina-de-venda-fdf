@@ -12,6 +12,7 @@ interface IProps {
   //JSX.Element
   children: JSX.Element
   showPopup?: boolean
+  affiliated?: boolean
 }
 
 const Content = styled.div`
@@ -139,6 +140,7 @@ export default function ButtonPop({
   href,
   children,
   showPopup = true,
+  affiliated,
 }: IProps) {
   const [infoAlready, setInfoAlready] = useState<boolean>(false)
   const [phoneData, setPhoneData] = useState<string | null>(null)
@@ -148,7 +150,7 @@ export default function ButtonPop({
   async function handleClickButton(href: string) {
     setIsLoading(true)
     try {
-      await axios.put(`/api/user/${phoneData}`)
+      await axios.put(`/api/user/${affiliated ? 'A-' + phoneData : phoneData}`)
     } catch (err) {
       console.log(err)
     }
