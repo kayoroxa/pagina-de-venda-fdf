@@ -16,7 +16,7 @@ interface IProps {
 
 const Content = styled.div`
   /* height: 300px; */
-  width: min(80vw, 400px);
+  width: min(70vw, 400px);
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -39,17 +39,17 @@ const Content = styled.div`
   }
 
   .inputs-container {
-    width: 80%;
+    width: 90%;
   }
 
-  button {
+  button.submit {
     border: none;
     background: #a5a5a5;
     color: #494949;
     font-size: min(4vw, 17px);
     border-radius: 20px;
     width: min(90%, 500px);
-    height: 40px;
+    height: 60px;
     margin-top: 20px;
     transition: all 0.2s;
     transform: scale(0.95);
@@ -59,7 +59,7 @@ const Content = styled.div`
     }
   }
 
-  button.already {
+  button.submit.already {
     background: #00bb3e;
     color: #fff;
     &:hover {
@@ -69,17 +69,56 @@ const Content = styled.div`
       transform: scale(1);
     }
   }
+
+  button.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    transform: scale(0.95);
+    color: #838383;
+    border: none;
+    background: none;
+    font-weight: bold;
+    border: solid 1px #999999;
+    font-size: 9px;
+    &:hover {
+      background: #a5a5a5;
+      color: #fff;
+      transform: scale(1);
+    }
+  }
 `
 
 const StyledPopup = styled(Popup)`
   &-content {
+    /* todo o box */
+    z-index: 99999 !important;
     margin: auto;
     background: white !important;
-    /* height: min(90vh, 400px); */
+    height: 400px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     padding: 40px;
     border-radius: 10px;
   }
+  @media only screen and (max-width: 768px) {
+    &-content {
+      height: min(60vh);
+    }
+  }
+
   &-arrow {
     color: rgb(255, 255, 255);
   }
@@ -104,6 +143,7 @@ export default function ButtonPop({
   const [infoAlready, setInfoAlready] = useState<boolean>(false)
   const [phoneData, setPhoneData] = useState<string | null>(null)
   const [isLoading, setIsLoading] = useState<boolean>(false)
+  const [open, setOpen] = useState<boolean>(false)
 
   async function handleClickButton(href: string) {
     setIsLoading(true)
@@ -124,7 +164,12 @@ export default function ButtonPop({
   }
 
   return (
-    <StyledPopup trigger={children} modal>
+    <StyledPopup
+      trigger={children}
+      modal
+      closeOnDocumentClick={false}
+      open={open}
+    >
       <Content>
         <div className="title">
           {!isLoading ? 'Quase lá.. 😀' : 'verificando vagas...'}
@@ -141,7 +186,7 @@ export default function ButtonPop({
             <div className="inputs-container">
               <InputPhone
                 onChange={value => {
-                  if (value.length >= 14) {
+                  if (value.length >= 15) {
                     setPhoneData(value)
                     setInfoAlready(true)
                   } else setInfoAlready(false)
@@ -150,12 +195,19 @@ export default function ButtonPop({
             </div>
             <button
               onClick={() => href && infoAlready && handleClickButton(href)}
-              className={infoAlready ? 'already' : ''}
+              className={infoAlready ? 'submit already' : 'submit'}
             >
-              {!infoAlready ? 'Coloque seu whatsapp' : 'Quero me cadastrar'}
+              {!infoAlready ? 'Coloque seu whatsapp 👆' : 'Quero me cadastrar'}
             </button>
           </>
         )}
+        <button
+          type="button"
+          className="close-button"
+          onClick={() => setOpen(o => !o)}
+        >
+          X
+        </button>
       </Content>
     </StyledPopup>
   )
