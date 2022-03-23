@@ -60,7 +60,7 @@ const useStyles = makeStyles({
 export default function Home() {
   const router = useRouter()
   const { ref, popup } = router.query
-  const showPopupButton = popup === 'true'
+  const showPopupButton = popup !== 'false'
 
   if (ref === 'E53339888M') linkCheckOut = 'https://bit.ly/34PctC3'
 
