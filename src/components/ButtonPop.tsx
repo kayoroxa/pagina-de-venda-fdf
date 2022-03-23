@@ -1,9 +1,9 @@
+import axios from 'axios'
+import { useState } from 'react'
 import Popup from 'reactjs-popup'
 // import 'reactjs-popup/dist/index.css'
 import styled from 'styled-components'
 import InputPhone from './InputPhone'
-import { useState } from 'react'
-import axios from 'axios'
 
 interface IProps {
   colorButton: string
@@ -11,6 +11,7 @@ interface IProps {
   href?: string
   //JSX.Element
   children: JSX.Element
+  showPopup?: boolean
 }
 
 const Content = styled.div`
@@ -95,7 +96,11 @@ const StyledPopup = styled(Popup)`
   }
 `
 
-export default function ButtonPop({ href, children }: IProps) {
+export default function ButtonPop({
+  href,
+  children,
+  showPopup = true,
+}: IProps) {
   const [infoAlready, setInfoAlready] = useState<boolean>(false)
   const [phoneData, setPhoneData] = useState<string | null>(null)
   const [isLoading, setIsLoading] = useState<boolean>(false)
@@ -108,6 +113,14 @@ export default function ButtonPop({ href, children }: IProps) {
       console.log(err)
     }
     location.href = href
+  }
+  if (showPopup === false) {
+    //return children with href
+    return (
+      <a href={href} style={{ textDecoration: 'none' }}>
+        {children}
+      </a>
+    )
   }
 
   return (

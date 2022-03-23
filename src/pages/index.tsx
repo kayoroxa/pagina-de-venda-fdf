@@ -1,20 +1,17 @@
-import { useState } from 'react'
-import { default as MUButton } from '@material-ui/core/Button'
-import MainStyle from '../styles/index.style'
-
+import { Grid, Hidden, makeStyles, Paper, Typography } from '@material-ui/core'
+import Button, { default as MUButton } from '@material-ui/core/Button'
 // import CheckCircleIcon from '@material-ui/icons/CheckCircle'
 // import BlockIcon from '@mui/icons-material/Block'
 // import WhatsAppIcon from '@mui/icons-material/WhatsApp'
 import CheckBoxIcon from '@mui/icons-material/CheckBox'
-import Button from '@material-ui/core/Button'
-import { Grid, Hidden, makeStyles, Paper, Typography } from '@material-ui/core'
+import { useRouter } from 'next/router'
+import { useState } from 'react'
+import ButtonPop from '../components/ButtonPop'
+import Fac from '../components/Fac'
 import ListItens from '../components/ListItens'
 // import Video from '../components/Video'
 import Valor from '../components/Valor'
-import Fac from '../components/Fac'
-import { useRouter } from 'next/router'
-
-import ButtonPop from '../components/ButtonPop'
+import MainStyle from '../styles/index.style'
 
 // const colorButton = '#b3b3b3'
 const colorButton = '#00bb3e'
@@ -23,6 +20,8 @@ const buttonTitle = 'Se cadastrar agora!'
 let linkCheckOut =
   'https://pay.hotmart.com/Y51115808H?off=fzv3lnkr&checkoutMode=10&split=12'
 // 'https://api.whatsapp.com/send?phone=5581975010604&text=Quero%20ser%20avisado%20quando%20sair%20vagas%20novas!!%20%F0%9F%98%80'
+
+const showPopupButton = false
 
 const useStyles = makeStyles({
   flexGrow: {
@@ -75,9 +74,9 @@ export default function Home() {
       setShowCall(0)
     }
   }
-  if (process.browser) {
-    window.addEventListener('scroll', myScrollFunc)
-  }
+  // if (process.browser) {
+  window.addEventListener('scroll', myScrollFunc)
+  // }
   return (
     <MainStyle>
       <div className="title separado">
@@ -140,6 +139,7 @@ export default function Home() {
 
       <ButtonPop
         href={linkCheckOut}
+        showPopup={showPopupButton}
         colorButton={colorButton}
         buttonTitle={buttonTitle}
       >
@@ -204,6 +204,7 @@ export default function Home() {
         <div className="fixed" style={{ opacity: showCall, zIndex: 99 }}>
           <ButtonPop
             href={linkCheckOut}
+            showPopup={showPopupButton}
             colorButton={colorButton}
             buttonTitle={buttonTitle}
           >
@@ -239,6 +240,7 @@ export default function Home() {
             </Grid>
             <Grid item md={3} lg={4} className="show">
               <ButtonPop
+                showPopup={showPopupButton}
                 href={linkCheckOut}
                 colorButton={colorButton}
                 buttonTitle={buttonTitle}
@@ -264,12 +266,14 @@ export default function Home() {
           </Grid>
         </div>
         <ButtonPop
+          showPopup={showPopupButton}
           href={linkCheckOut}
           colorButton={colorButton}
           buttonTitle={buttonTitle}
         >
           <Button
             // href={linkCheckOut}
+
             variant="outlined"
             // color="default"
             size="large"
