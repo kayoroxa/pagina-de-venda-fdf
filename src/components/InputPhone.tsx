@@ -1,10 +1,10 @@
 //remove typescrit check
 
-import * as React from 'react'
-import { IMaskInput } from 'react-imask'
+import FormControl from '@mui/material/FormControl'
 import Input from '@mui/material/Input'
 import InputLabel from '@mui/material/InputLabel'
-import FormControl from '@mui/material/FormControl'
+import * as React from 'react'
+import { IMaskInput } from 'react-imask'
 
 interface CustomProps {
   onChange: (event: { target: { name: string; value: string } }) => void
@@ -20,7 +20,7 @@ const TextMaskCustom = React.forwardRef<HTMLElement, CustomProps>(
         translate={(value: string) => {
           return value.replace(/\D/g, '').replace(/(\d{2})(\d)/, '($1) $2')
         }}
-        mask="(#0) #0000-0000"
+        mask="(#0) # 0000-0000"
         definitions={{
           '#': /[1-9]/,
         }}
@@ -59,6 +59,10 @@ export default function InputPhone({ onChange }: IProp) {
     if (onChange) onChange(values.textmask)
   }, [values.textmask])
 
+  React.useEffect(() => {
+    document.querySelector('input')?.blur()
+  }, [])
+
   return (
     // <Box
     //   sx={{
@@ -72,7 +76,10 @@ export default function InputPhone({ onChange }: IProp) {
         Coloque seu Whatsapp Aqui
       </InputLabel>
       <Input
-        placeholder="(00) 00000-0000"
+        // onFocus={e => {
+        //   e.target.blur()
+        // }}
+        placeholder="(00) 0 0000-0000"
         value={values.textmask}
         onChange={handleChange}
         name="textmask"
