@@ -21,8 +21,6 @@ let linkCheckOut =
   'https://pay.hotmart.com/Y51115808H?off=fzv3lnkr&checkoutMode=10&split=12'
 // 'https://api.whatsapp.com/send?phone=5581975010604&text=Quero%20ser%20avisado%20quando%20sair%20vagas%20novas!!%20%F0%9F%98%80'
 
-const showPopupButton = false
-
 const useStyles = makeStyles({
   flexGrow: {
     flex: '1',
@@ -61,7 +59,9 @@ const useStyles = makeStyles({
 
 export default function Home() {
   const router = useRouter()
-  const { ref } = router.query
+  const { ref, popup } = router.query
+  const showPopupButton = popup === 'true'
+
   if (ref === 'E53339888M') linkCheckOut = 'https://bit.ly/34PctC3'
 
   const classes = useStyles()
@@ -74,9 +74,9 @@ export default function Home() {
       setShowCall(0)
     }
   }
-  // if (process.browser) {
-  window.addEventListener('scroll', myScrollFunc)
-  // }
+  if (process.browser) {
+    window?.addEventListener('scroll', myScrollFunc)
+  }
   return (
     <MainStyle>
       <div className="title separado">
