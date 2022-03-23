@@ -105,7 +105,7 @@ export default function Home() {
                   bottom: '0',
                   right: 0,
                   position: 'absolute',
-                  zIndex: 9999,
+                  zIndex: 20,
                 }}
               />
               <iframe
