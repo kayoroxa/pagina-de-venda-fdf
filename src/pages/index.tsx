@@ -151,6 +151,7 @@ export default function Home() {
           size="large"
           className={classes.buttonFill}
           startIcon={<CheckBoxIcon />}
+          id="button-to-checkout"
         >
           {buttonTitle}
         </MUButton>
@@ -216,6 +217,7 @@ export default function Home() {
               size="large"
               className={classes.button}
               startIcon={<CheckBoxIcon />}
+              id="button-to-checkout"
               // fullWidth
             >
               {buttonTitle}
@@ -250,6 +252,7 @@ export default function Home() {
               >
                 <Button
                   // href={linkCheckOut}
+                  id="button-to-checkout"
                   variant="outlined"
                   // color="default"
                   size="large"
@@ -277,7 +280,7 @@ export default function Home() {
         >
           <Button
             // href={linkCheckOut}
-
+            id="button-to-checkout"
             variant="outlined"
             // color="default"
             size="large"

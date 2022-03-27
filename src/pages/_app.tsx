@@ -1,10 +1,10 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import Head from 'next/head'
-import { ThemeProvider } from '@material-ui/core/styles'
 import CssBaseline from '@material-ui/core/CssBaseline'
+import { ThemeProvider } from '@material-ui/core/styles'
+import Head from 'next/head'
+import PropTypes from 'prop-types'
+import React, { useEffect } from 'react'
+import TagManager from 'react-gtm-module'
 import theme from '../theme'
-import Script from 'next/script'
 
 export default function MyApp(props: any) {
   const { Component, pageProps } = props
@@ -17,9 +17,13 @@ export default function MyApp(props: any) {
     }
   }, [])
 
+  useEffect(() => {
+    TagManager.initialize({ gtmId: 'GTM-WCK22R7' })
+  }, [])
+
   return (
     <React.Fragment>
-      <Script
+      {/* <Script
         src="https://www.googletagmanager.com/gtag/js?id=G-3G9X4JLLWX"
         strategy="afterInteractive"
       />
@@ -31,7 +35,7 @@ export default function MyApp(props: any) {
 
           gtag('config', 'G-3G9X4JLLWX');
         `}
-      </Script>
+      </Script> */}
       <Head>
         <title>Formula Da Fluência</title>
         <meta
