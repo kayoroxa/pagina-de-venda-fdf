@@ -9,17 +9,11 @@ import { useState } from 'react'
 import ButtonPop from '../components/ButtonPop'
 import Fac from '../components/Fac'
 import ListItens from '../components/ListItens'
-// import Video from '../components/Video'
-import Valor from '../components/Valor'
 import MainStyle from '../styles/index.style'
 
 // const colorButton = '#b3b3b3'
 const colorButton = '#00bb3e'
 const buttonTitle = 'Se cadastrar agora!'
-
-let linkCheckOut =
-  'https://pay.hotmart.com/Y51115808H?off=fzv3lnkr&checkoutMode=10&split=12'
-// 'https://api.whatsapp.com/send?phone=5581975010604&text=Quero%20ser%20avisado%20quando%20sair%20vagas%20novas!!%20%F0%9F%98%80'
 
 const useStyles = makeStyles({
   flexGrow: {
@@ -62,7 +56,12 @@ export default function Home() {
   const { ref, popup } = router.query
   const showPopupButton = popup === 'true'
 
-  if (ref === 'E53339888M') linkCheckOut = 'https://bit.ly/34PctC3'
+  let linkCheckOut = 'https://forms.gle/TmDRqpZtPNrUPLiW7'
+  // 'https://pay.hotmart.com/Y51115808H?off=fzv3lnkr&checkoutMode=10&split=12'
+  // 'https://api.whatsapp.com/send?phone=5581975010604&text=Quero%20ser%20avisado%20quando%20sair%20vagas%20novas!!%20%F0%9F%98%80'
+
+  if (ref === 'E53339888M') linkCheckOut = 'https://forms.gle/ySuoH6zZrBw2H15S6'
+  // linkCheckOut = 'https://bit.ly/34PctC3'
 
   const classes = useStyles()
   const [showCall, setShowCall] = useState(0)
@@ -132,7 +131,7 @@ export default function Home() {
         <Grid item lg={4} md={5} sm={12} xs={12}>
           <Paper elevation={3} className="more">
             <ListItens />
-            <Valor notColor />
+            {/* <Valor notColor /> */}
           </Paper>
         </Grid>
       </Grid>
@@ -240,7 +239,7 @@ export default function Home() {
               </Typography>
             </Grid>
             <Grid item md={4} lg={3} className="show">
-              <Valor removeOldValue notColor />
+              {/* <Valor removeOldValue notColor /> */}
             </Grid>
             <Grid item md={3} lg={4} className="show">
               <ButtonPop
