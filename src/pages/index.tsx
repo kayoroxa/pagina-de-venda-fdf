@@ -85,7 +85,7 @@ export default function Home() {
         </h1>
       </div>
       <Grid container spacing={1} alignItems="center" justify="center">
-        <Grid item lg={7} md={7} sm={12} xs={12}>
+        {/* <Grid item lg={7} md={7} sm={12} xs={12}>
           <Paper elevation={3} className="video">
             <div
               style={{
@@ -127,7 +127,7 @@ export default function Home() {
               ></iframe>
             </div>
           </Paper>
-        </Grid>
+        </Grid> */}
         <Grid item lg={4} md={5} sm={12} xs={12}>
           <Paper elevation={3} className="more">
             <ListItens />
@@ -156,12 +156,12 @@ export default function Home() {
         </MUButton>
       </ButtonPop>
 
-      <div className="ao-redor">
+      {/* <div className="ao-redor">
         <img src="images/comprasegura.png" />
       </div>
       <div className="ao-redor">
         <img src="images/cartoes.png" />
-      </div>
+      </div> */}
 
       {/* <div className="other-background">
         <div className="title">
