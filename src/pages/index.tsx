@@ -9,6 +9,7 @@ import { useState } from 'react'
 import ButtonPop from '../components/ButtonPop'
 import Fac from '../components/Fac'
 import ListItens from '../components/ListItens'
+import Valor from '../components/Valor'
 import MainStyle from '../styles/index.style'
 
 // const colorButton = '#b3b3b3'
@@ -53,15 +54,18 @@ const useStyles = makeStyles({
 
 export default function Home() {
   const router = useRouter()
-  const { ref, popup } = router.query
+  const { ref, popup, pag } = router.query
   const showPopupButton = popup === 'true'
-
-  let linkCheckOut = 'https://forms.gle/TmDRqpZtPNrUPLiW7'
-  // 'https://pay.hotmart.com/Y51115808H?off=fzv3lnkr&checkoutMode=10&split=12'
+  const showVideoAndPrice = pag === '2'
+  let linkCheckOut = !showVideoAndPrice
+    ? 'https://forms.gle/TmDRqpZtPNrUPLiW7'
+    : 'https://pay.hotmart.com/Y51115808H?off=fzv3lnkr&checkoutMode=10&split=12'
   // 'https://api.whatsapp.com/send?phone=5581975010604&text=Quero%20ser%20avisado%20quando%20sair%20vagas%20novas!!%20%F0%9F%98%80'
 
-  if (ref === 'E53339888M') linkCheckOut = 'https://forms.gle/ySuoH6zZrBw2H15S6'
-  // linkCheckOut = 'https://bit.ly/34PctC3'
+  if (ref === 'E53339888M')
+    linkCheckOut = !showVideoAndPrice
+      ? 'https://forms.gle/ySuoH6zZrBw2H15S6'
+      : 'https://bit.ly/34PctC3'
 
   const classes = useStyles()
   const [showCall, setShowCall] = useState(0)
@@ -85,53 +89,55 @@ export default function Home() {
         </h1>
       </div>
       <Grid container spacing={1} alignItems="center" justify="center">
-        {/* <Grid item lg={7} md={7} sm={12} xs={12}>
-          <Paper elevation={3} className="video">
-            <div
-              style={{
-                position: 'relative',
-                width: '1px',
-                minWidth: '100%',
-                paddingBottom: '56.25%',
-              }}
-            >
+        {showVideoAndPrice && (
+          <Grid item lg={7} md={7} sm={12} xs={12}>
+            <Paper elevation={3} className="video">
               <div
-                className="block-video"
                 style={{
-                  // backgroundColor: '#ff0000',
-                  width: 'max(22%, 140px)',
-                  height: 'max(15%, 34px)',
-                  bottom: '0',
-                  right: 0,
-                  position: 'absolute',
-                  zIndex: 20,
-                }}
-              />
-              <iframe
-                allow="autoplay"
-                className="spotlightr"
-                allowTransparency={true}
-                style={{
-                  //"width: 1px; min-width: 100%; height: 100%; position: absolute"
-                  position: 'absolute',
+                  position: 'relative',
                   width: '1px',
                   minWidth: '100%',
-                  height: '100%',
+                  paddingBottom: '56.25%',
                 }}
-                allowFullScreen={false}
-                src="https://if.cdn.spotlightr.com/watch/MTIyMTYxNw==?fallback=true"
-                // src="https://if.cdn.spotlightr.com/watch/MTIwNTY1OA==?fallback=true"
-                frameBorder="0"
-                scrolling="no"
-                name="videoPlayerframe"
-              ></iframe>
-            </div>
-          </Paper>
-        </Grid> */}
+              >
+                <div
+                  className="block-video"
+                  style={{
+                    // backgroundColor: '#ff0000',
+                    width: 'max(22%, 140px)',
+                    height: 'max(15%, 34px)',
+                    bottom: '0',
+                    right: 0,
+                    position: 'absolute',
+                    zIndex: 20,
+                  }}
+                />
+                <iframe
+                  allow="autoplay"
+                  className="spotlightr"
+                  allowTransparency={true}
+                  style={{
+                    //"width: 1px; min-width: 100%; height: 100%; position: absolute"
+                    position: 'absolute',
+                    width: '1px',
+                    minWidth: '100%',
+                    height: '100%',
+                  }}
+                  allowFullScreen={false}
+                  src="https://if.cdn.spotlightr.com/watch/MTIyMTYxNw==?fallback=true"
+                  // src="https://if.cdn.spotlightr.com/watch/MTIwNTY1OA==?fallback=true"
+                  frameBorder="0"
+                  scrolling="no"
+                  name="videoPlayerframe"
+                ></iframe>
+              </div>
+            </Paper>
+          </Grid>
+        )}
         <Grid item lg={4} md={5} sm={12} xs={12}>
           <Paper elevation={3} className="more">
             <ListItens />
-            {/* <Valor notColor /> */}
+            {showVideoAndPrice && <Valor notColor />}
           </Paper>
         </Grid>
       </Grid>
@@ -156,12 +162,16 @@ export default function Home() {
         </MUButton>
       </ButtonPop>
 
-      {/* <div className="ao-redor">
-        <img src="images/comprasegura.png" />
-      </div>
-      <div className="ao-redor">
-        <img src="images/cartoes.png" />
-      </div> */}
+      {showVideoAndPrice && (
+        <>
+          <div className="ao-redor">
+            <img src="images/comprasegura.png" />
+          </div>
+          <div className="ao-redor">
+            <img src="images/cartoes.png" />
+          </div>
+        </>
+      )}
 
       {/* <div className="other-background">
         <div className="title">
@@ -239,7 +249,7 @@ export default function Home() {
               </Typography>
             </Grid>
             <Grid item md={4} lg={3} className="show">
-              {/* <Valor removeOldValue notColor /> */}
+              {showVideoAndPrice && <Valor removeOldValue notColor />}
             </Grid>
             <Grid item md={3} lg={4} className="show">
               <ButtonPop
