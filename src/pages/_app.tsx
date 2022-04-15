@@ -2,8 +2,8 @@ import CssBaseline from '@material-ui/core/CssBaseline'
 import { ThemeProvider } from '@material-ui/core/styles'
 import Head from 'next/head'
 import PropTypes from 'prop-types'
-import React, { useEffect } from 'react'
-import TagManager from 'react-gtm-module'
+import React from 'react'
+// import TagManager from 'react-gtm-module'
 import theme from '../theme'
 
 export default function MyApp(props: any) {
@@ -17,9 +17,9 @@ export default function MyApp(props: any) {
     }
   }, [])
 
-  useEffect(() => {
-    TagManager.initialize({ gtmId: 'GTM-WCK22R7' })
-  }, [])
+  // useEffect(() => {
+  //   TagManager.initialize({ gtmId: 'GTM-WCK22R7' })
+  // }, [])
 
   return (
     <React.Fragment>
