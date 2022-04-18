@@ -54,7 +54,7 @@ const useStyles = makeStyles({
 
 export default function Home() {
   const router = useRouter()
-  const { ref, popup, pag } = router.query
+  const { ref, popup, pag, src } = router.query
   const showPopupButton = popup === 'true'
   const showVideoAndPrice = pag !== '2'
   let linkCheckOut = !showVideoAndPrice
@@ -67,6 +67,9 @@ export default function Home() {
       ? 'https://forms.gle/ySuoH6zZrBw2H15S6'
       : 'https://bit.ly/34PctC3'
 
+  if (src) {
+    linkCheckOut += `&src=${src}`
+  }
   const classes = useStyles()
   const [showCall, setShowCall] = useState(0)
   var myScrollFunc = function () {
