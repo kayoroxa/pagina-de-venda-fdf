@@ -56,7 +56,7 @@ export default function Home() {
   const router = useRouter()
   const { ref, popup, pag } = router.query
   const showPopupButton = popup === 'true'
-  const showVideoAndPrice = pag === '2'
+  const showVideoAndPrice = pag !== '2'
   let linkCheckOut = !showVideoAndPrice
     ? 'https://forms.gle/TmDRqpZtPNrUPLiW7'
     : 'https://pay.hotmart.com/Y51115808H?off=fzv3lnkr&checkoutMode=10&split=12'
