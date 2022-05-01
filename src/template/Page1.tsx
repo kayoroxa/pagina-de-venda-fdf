@@ -96,7 +96,8 @@ export default function Page1({ myRef, mySrc, popup, pag }: IProps) {
       </div>
       <Grid container spacing={1} alignItems="center" justify="center">
         {showVideoAndPrice && (
-          <MyVideo src="https://if.cdn.spotlightr.com/watch/MTIyMTYxNw==?fallback=true" />
+          <MyVideo ytID="XCzLIMUfBpU" />
+          // <MyVideo src="https://if.cdn.spotlightr.com/watch/MTIyMTYxNw==?fallback=true" />
         )}
         <MyPlan showVideoAndPrice={showVideoAndPrice} />
       </Grid>
