@@ -57,8 +57,8 @@ interface IProps {
 export default function Page1({ myRef, mySrc, popup, pag }: IProps) {
   const showPopupButton = popup
   const showVideoAndPrice = pag !== '2'
-  let linkCheckOutDemo =
-    'https://pay.hotmart.com/Y51115808H?off=xnuk90zx&checkoutMode=10'
+  // let linkCheckOutDemo =
+  //   'https://pay.hotmart.com/Y51115808H?off=xnuk90zx&checkoutMode=10'
 
   let linkCheckOut = !showVideoAndPrice
     ? 'https://forms.gle/TmDRqpZtPNrUPLiW7'

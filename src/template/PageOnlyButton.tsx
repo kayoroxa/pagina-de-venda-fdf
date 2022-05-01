@@ -1,6 +1,5 @@
 import { Grid, makeStyles } from '@material-ui/core'
 import WhatsAppIcon from '@mui/icons-material/WhatsApp'
-import { useState } from 'react'
 import MyButton from '../organisms/MyButton'
 import MyVideo from '../organisms/MyVideo'
 import MainStyle from '../styles/index.style'
@@ -68,18 +67,18 @@ export default function PageOnlyButton({ myRef, mySrc, popup, pag }: IProps) {
     linkCheckOut += `&src=${mySrc}`
   }
   const classes = useStyles()
-  const [showCall, setShowCall] = useState(0)
-  var myScrollFunc = function () {
-    var y = window.scrollY
-    if (y >= 400) {
-      setShowCall(1)
-    } else {
-      setShowCall(0)
-    }
-  }
-  if (process.browser) {
-    window?.addEventListener('scroll', myScrollFunc)
-  }
+  // const [showCall, setShowCall] = useState(0)
+  // var myScrollFunc = function () {
+  //   var y = window.scrollY
+  //   if (y >= 400) {
+  //     setShowCall(1)
+  //   } else {
+  //     setShowCall(0)
+  //   }
+  // }
+  // if (process.browser) {
+  //   window?.addEventListener('scroll', myScrollFunc)
+  // }
   return (
     <MainStyle>
       <div className="title separado">
