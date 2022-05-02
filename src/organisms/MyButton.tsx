@@ -1,17 +1,17 @@
-import Button from '@material-ui/core/Button'
-import CheckBoxIcon from '@mui/icons-material/CheckBox'
+import Button from '../components/Button'
 import ButtonPop from '../components/ButtonPop'
 
 interface IProps {
   href: string
   title: string
-  styleClass: any
+  // styleClass: any
   color: string
   showPopup: boolean
   myRef: string | string[] | undefined
   styleInject?: any
   fullWidth?: boolean
   icon?: any
+  variant?: 'outlined' | 'fill'
 }
 
 export default function MyButton({
@@ -21,11 +21,11 @@ export default function MyButton({
   color,
   // fill,
   // onClick,
-  styleClass,
+  // styleClass,
   showPopup,
   styleInject,
-  fullWidth,
-  icon,
+  // icon,
+  variant,
 }: // styleInject,
 IProps) {
   return (
@@ -37,12 +37,10 @@ IProps) {
       buttonTitle={title}
     >
       <Button
-        variant="outlined"
-        fullWidth={fullWidth}
+        variant={variant || 'fill'}
         style={styleInject}
-        size="large"
-        className={styleClass}
-        startIcon={icon || <CheckBoxIcon />}
+        // className={styleClass}
+        // startIcon={icon || <CheckBoxIcon />}
         id="button-to-checkout"
       >
         {title}

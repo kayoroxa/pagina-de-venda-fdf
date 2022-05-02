@@ -108,7 +108,8 @@ export default function Page1({ myRef, mySrc, popup, pag }: IProps) {
         showPopup={showPopupButton}
         color={colorButton}
         myRef={myRef}
-        styleClass={classes.buttonFill}
+        variant="fill"
+        // styleClass={classes.buttonFill}
       />
 
       {/* {showVideoAndPrice && (
@@ -237,7 +238,8 @@ export default function Page1({ myRef, mySrc, popup, pag }: IProps) {
           showPopup={showPopupButton}
           color={colorButton}
           myRef={myRef}
-          styleClass={classes.button}
+          variant="outlined"
+          // styleClass={classes.button}
         />
       </div>
       {/* </Hidden> */}
