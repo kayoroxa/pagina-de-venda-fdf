@@ -1,4 +1,4 @@
-import { Grid, makeStyles, Paper } from '@material-ui/core'
+import { Grid, Paper } from '@material-ui/core'
 import { useState } from 'react'
 import Fac from '../components/Fac'
 import ListIsNot from '../organisms/ListIsNot'
@@ -10,41 +10,41 @@ import MainStyle from '../styles/index.style'
 const colorButton = '#00bb3e'
 const buttonTitle = 'Se cadastrar agora!'
 
-const useStyles = makeStyles({
-  flexGrow: {
-    flex: '1',
-  },
-  paper: {
-    rounded: true,
-  },
-  button: {
-    backgroundColor: '#fff',
-    color: colorButton,
-    borderColor: colorButton,
-    // fontSize: 'min(5vw, 20px)',
-    fontSize: 'min(4vw, 17px)',
-    borderRadius: '40px',
-    width: 'min(90vw, 600px)',
-    height: 'max(8vh, 70px)',
-    '&:hover': {
-      backgroundColor: colorButton,
-      color: '#fff',
-    },
-  },
-  buttonFill: {
-    backgroundColor: colorButton,
-    color: '#fff',
-    borderColor: colorButton,
-    fontSize: 'min(4vw, 17px)',
-    borderRadius: '40px',
-    width: 'min(90vw, 500px)',
-    height: 'max(8vh, 70px)',
-    '&:hover': {
-      backgroundColor: colorButton,
-      color: '#fff',
-    },
-  },
-})
+// const useStyles = makeStyles({
+//   flexGrow: {
+//     flex: '1',
+//   },
+//   paper: {
+//     rounded: true,
+//   },
+//   button: {
+//     backgroundColor: '#fff',
+//     color: colorButton,
+//     borderColor: colorButton,
+//     // fontSize: 'min(5vw, 20px)',
+//     fontSize: 'min(4vw, 17px)',
+//     borderRadius: '40px',
+//     width: 'min(90vw, 600px)',
+//     height: 'max(8vh, 70px)',
+//     '&:hover': {
+//       backgroundColor: colorButton,
+//       color: '#fff',
+//     },
+//   },
+//   buttonFill: {
+//     backgroundColor: colorButton,
+//     color: '#fff',
+//     borderColor: colorButton,
+//     fontSize: 'min(4vw, 17px)',
+//     borderRadius: '40px',
+//     width: 'min(90vw, 500px)',
+//     height: 'max(8vh, 70px)',
+//     '&:hover': {
+//       backgroundColor: colorButton,
+//       color: '#fff',
+//     },
+//   },
+// })
 
 interface IProps {
   myRef: string | string[] | undefined
@@ -72,7 +72,7 @@ export default function Page1({ myRef, mySrc, popup, pag }: IProps) {
   if (mySrc) {
     linkCheckOut += `&src=${mySrc}`
   }
-  const classes = useStyles()
+  // const classes = useStyles()
   const [showCall, setShowCall] = useState(0)
   var myScrollFunc = function () {
     var y = window.scrollY

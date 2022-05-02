@@ -1,4 +1,4 @@
-import { Grid, makeStyles } from '@material-ui/core'
+import { Grid } from '@material-ui/core'
 import WhatsAppIcon from '@mui/icons-material/WhatsApp'
 import MyButton from '../organisms/MyButton'
 import MyVideo from '../organisms/MyVideo'
@@ -8,41 +8,41 @@ import MainStyle from '../styles/index.style'
 const colorButton = '#00bb3e'
 const buttonTitle = 'Quero saber mais!'
 
-const useStyles = makeStyles({
-  flexGrow: {
-    flex: '1',
-  },
-  paper: {
-    rounded: true,
-  },
-  button: {
-    backgroundColor: '#fff',
-    color: colorButton,
-    borderColor: colorButton,
-    // fontSize: 'min(5vw, 20px)',
-    fontSize: 'min(4vw, 17px)',
-    borderRadius: '40px',
-    width: 'min(90vw, 600px)',
-    height: 'max(8vh, 70px)',
-    '&:hover': {
-      backgroundColor: colorButton,
-      color: '#fff',
-    },
-  },
-  buttonFill: {
-    backgroundColor: colorButton,
-    color: '#fff',
-    borderColor: colorButton,
-    fontSize: 'min(4vw, 17px)',
-    borderRadius: '40px',
-    width: 'min(90vw, 500px)',
-    height: 'max(8vh, 70px)',
-    '&:hover': {
-      backgroundColor: colorButton,
-      color: '#fff',
-    },
-  },
-})
+// const useStyles = makeStyles({
+//   flexGrow: {
+//     flex: '1',
+//   },
+//   paper: {
+//     rounded: true,
+//   },
+//   button: {
+//     backgroundColor: '#fff',
+//     color: colorButton,
+//     borderColor: colorButton,
+//     // fontSize: 'min(5vw, 20px)',
+//     fontSize: 'min(4vw, 17px)',
+//     borderRadius: '40px',
+//     width: 'min(90vw, 600px)',
+//     height: 'max(8vh, 70px)',
+//     '&:hover': {
+//       backgroundColor: colorButton,
+//       color: '#fff',
+//     },
+//   },
+//   buttonFill: {
+//     backgroundColor: colorButton,
+//     color: '#fff',
+//     borderColor: colorButton,
+//     fontSize: 'min(4vw, 17px)',
+//     borderRadius: '40px',
+//     width: 'min(90vw, 500px)',
+//     height: 'max(8vh, 70px)',
+//     '&:hover': {
+//       backgroundColor: colorButton,
+//       color: '#fff',
+//     },
+//   },
+// })
 
 interface IProps {
   myRef: string | string[] | undefined
@@ -66,7 +66,7 @@ export default function PageOnlyButton({ myRef, mySrc, popup, pag }: IProps) {
   if (mySrc) {
     linkCheckOut += `&src=${mySrc}`
   }
-  const classes = useStyles()
+  // const classes = useStyles()
   // const [showCall, setShowCall] = useState(0)
   // var myScrollFunc = function () {
   //   var y = window.scrollY
@@ -99,7 +99,7 @@ export default function PageOnlyButton({ myRef, mySrc, popup, pag }: IProps) {
         showPopup={showPopupButton}
         color={colorButton}
         myRef={myRef}
-        styleClass={classes.buttonFill}
+        // styleClass={classes.buttonFill}
         icon={<WhatsAppIcon />}
       />
     </MainStyle>

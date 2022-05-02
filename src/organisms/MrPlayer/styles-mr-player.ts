@@ -27,6 +27,9 @@ export const ContainerMrPlayer = styled.div<IProps>`
     padding-bottom: ${props => (props.isFullScreen ? '0' : '56.25%')};
     height: ${props => (props.isFullScreen ? '100vh' : '0')};
 
+    .aviso-video {
+      font-size: 1.05rem;
+    }
     .aviso-video,
     .overlay,
     iframe,
