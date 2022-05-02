@@ -172,19 +172,24 @@ export default function Page1({ myRef, mySrc, popup, pag }: IProps) {
             do mundo.
           </p>
           <p>
-            O inglês abriu portas e oportunidade que hoje não saberia o que
-            seria da minha vida sem..
+            O inglês me abriu portas e oportunidades, que hoje eu não saberia o
+            que seria da minha vida sem..
           </p>
-          <p>
+          {/* <p>
             <b style={{ color: '#0ba861' }}>A boa noticia</b> é que você não vai
             precisar passar pelo que eu passei. Juntei tudo que funciona para
             aprender inglês em <b>1 terço do tempo</b>
+          </p> */}
+          <p>
+            <b style={{ color: '#0ba861' }}>A boa noticia</b> é que você não vai
+            precisar pagar com seu tempo e dinheiro oque eu precisei pagar, não
+            precisando passar incontáveis dias refinando as técnicas que eu
+            refinei.
           </p>
-          {/* <p>
-          A boa noticia é que você não vai precisar pagar com seu tempo e
-          dinheiro oque eu precisei pagar, não precisando passar incontáveis
-          dias refinando as técnicas que eu refinei.
-        </p> */}
+          <p>
+            Juntei tudo que eu sei que funciona, e montei de uma forma pra{' '}
+            <b>reduzir 90% do tempo</b> que leva pra aprender
+          </p>
           <p>Aqui está o método que vai trazer os novos bilíngue do brasil</p>
         </div>
       </div>

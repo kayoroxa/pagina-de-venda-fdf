@@ -9,7 +9,8 @@ interface IProps {
   videoId: string
   onGoBack?: () => void
 }
-const easing = BezierEasing(0.07, 0.67, 0.17, 1.01)
+const easing = BezierEasing(0.04, 0.63, 0, 0.97)
+// const easing = BezierEasing(0.07, 0.67, 0.17, 1.01)
 const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms))
 
 const MrPlayer = ({ videoId, onGoBack }: IProps) => {
@@ -38,7 +39,7 @@ const MrPlayer = ({ videoId, onGoBack }: IProps) => {
         const easyPercent = easing(percent) * 100
 
         setVideoPercent(easyPercent)
-      }, 1000)
+      }, 500)
 
       return () => clearInterval(interval)
     }
