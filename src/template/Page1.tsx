@@ -1,9 +1,8 @@
-import { Grid, Hidden, makeStyles, Paper, Typography } from '@material-ui/core'
+import { Grid, makeStyles, Paper } from '@material-ui/core'
 import { useState } from 'react'
 import Fac from '../components/Fac'
-import Valor from '../components/Valor'
+import ListIsNot from '../organisms/ListIsNot'
 import MyButton from '../organisms/MyButton'
-import MyPlan from '../organisms/MyPlan'
 import MyVideo from '../organisms/MyVideo'
 import MainStyle from '../styles/index.style'
 
@@ -89,18 +88,19 @@ export default function Page1({ myRef, mySrc, popup, pag }: IProps) {
   return (
     <MainStyle>
       <div className="title separado">
-        <h1>
-          O único curso que você vai precisar para <span>ficar fluente</span> no
-          inglês
+        <h3>ATENÇÃO:</h3>
+        <h1 style={{ fontSize: 'min(5.8vw, 25px)' }}>
+          O QUE AS ESCOLAS DE INGLÊS <br /> NÃO ESTÃO FALANDO SOBRE <br />A
+          FLUÊNCIA NO INGLÊS
         </h1>
       </div>
-      <Grid container spacing={1} alignItems="center" justify="center">
-        {showVideoAndPrice && (
-          <MyVideo ytID="XCzLIMUfBpU" />
-          // <MyVideo src="https://if.cdn.spotlightr.com/watch/MTIyMTYxNw==?fallback=true" />
-        )}
+      {showVideoAndPrice && (
+        <MyVideo ytID="XCzLIMUfBpU" />
+        // <MyVideo src="https://if.cdn.spotlightr.com/watch/MTIyMTYxNw==?fallback=true" />
+      )}
+      {/* <Grid container spacing={1} alignItems="center" justify="center">
         <MyPlan showVideoAndPrice={showVideoAndPrice} />
-      </Grid>
+      </Grid> */}
 
       <MyButton
         href={linkCheckOut}
@@ -111,7 +111,7 @@ export default function Page1({ myRef, mySrc, popup, pag }: IProps) {
         styleClass={classes.buttonFill}
       />
 
-      {showVideoAndPrice && (
+      {/* {showVideoAndPrice && (
         <>
           <div className="ao-redor">
             <img src="images/comprasegura.png" />
@@ -120,18 +120,87 @@ export default function Page1({ myRef, mySrc, popup, pag }: IProps) {
             <img src="images/cartoes.png" />
           </div>
         </>
-      )}
+      )} */}
 
-      {/* <div className="other-background">
-        <div className="title">
-          <h1>
-            Veja o Formula Da Fluência <span>por dentro</span>!
-          </h1>
+      <div
+        style={{
+          padding: 2,
+          width: '100vw',
+          // background: '#0452b9',
+          // color: 'white',
+          // textAlign: 'center',
+        }}
+      >
+        <div
+          style={{
+            padding: 2,
+            margin: 'auto',
+            width: 'min(90%, 780px)',
+            fontSize: '1.03rem',
+            // textAlign: 'center',
+          }}
+        >
+          {/* <p>
+          Você já teve aulas de inglês na sua escola? Provavelmente já teve
+          contato com aprender inglês...
+        </p> */}
+          <p>
+            Mesmo <b>TODAS AS ESCOLAS</b> do brasil tendo o inglês como matéria,
+            você sabia que apenas <b>5% do brasil sabe inglês</b>?
+          </p>
+          <p>
+            E não quer dizer que essas pessoas são mais especiais que as outras,
+            e sim que existe formas rápida e efetiva de aprender inglês, que não
+            se aprende nas escolas.
+          </p>
+          {/* <p>
+          Com o método que eu vou te apresentar hoje, é uma ponte para que você
+          não precise se melar de lama.
+        </p> */}
+
+          {/* <p>
+          Eu comecei me aventurar aprendendo inglês mas não sabia um método...
+        </p> */}
+          <p>
+            Depois de eu revirar a internet em busca de um bom método, juntei
+            uma espécie de <b>formula para aprender inglês</b>..
+          </p>
+          <p>
+            <b>Depois de incontáveis dias</b> testando e refinando técnicas
+            avançadas. Hoje posso dizer que sei falar a lingua mais importante
+            do mundo.
+          </p>
+          <p>
+            O inglês abriu portas e oportunidade que hoje não saberia o que
+            seria da minha vida sem..
+          </p>
+          <p>
+            <b style={{ color: '#0ba861' }}>A boa noticia</b> é que você não vai
+            precisar passar pelo que eu passei. Juntei tudo que funciona para
+            aprender inglês em <b>1 terço do tempo</b>
+          </p>
+          {/* <p>
+          A boa noticia é que você não vai precisar pagar com seu tempo e
+          dinheiro oque eu precisei pagar, não precisando passar incontáveis
+          dias refinando as técnicas que eu refinei.
+        </p> */}
+          <p>Aqui está o método que vai trazer os novos bilíngue do brasil</p>
         </div>
-        <Paper elevation={3} className="video">
-          <Video url="https://www.youtube-nocookie.com/embed/DT3es07ISuA" />
-        </Paper>
-      </div> */}
+      </div>
+      <h3
+        style={{
+          textAlign: 'center',
+          fontSize: 'min(8vw, 40px)',
+          padding: '0 min(6vw, 20px)',
+          marginBottom: 0,
+          lineHeight: '0.98',
+        }}
+      >
+        O incrível método <br />
+        Formula da fluência
+      </h3>
+
+      <ListIsNot />
 
       <Fac />
 
@@ -160,20 +229,20 @@ export default function Page1({ myRef, mySrc, popup, pag }: IProps) {
         </Grid>
       </Paper>
 
-      <Hidden mdUp>
-        <div className="fixed" style={{ opacity: showCall, zIndex: 99 }}>
-          <MyButton
-            href={linkCheckOut}
-            title={buttonTitle}
-            showPopup={showPopupButton}
-            color={colorButton}
-            myRef={myRef}
-            styleClass={classes.button}
-          />
-        </div>
-      </Hidden>
+      {/* <Hidden mdUp> */}
+      <div className="fixed" style={{ opacity: showCall, zIndex: 99 }}>
+        <MyButton
+          href={linkCheckOut}
+          title={buttonTitle}
+          showPopup={showPopupButton}
+          color={colorButton}
+          myRef={myRef}
+          styleClass={classes.button}
+        />
+      </div>
+      {/* </Hidden> */}
 
-      <Hidden smDown>
+      {/* <Hidden smDown>
         <div className="fixed-pc" style={{ opacity: showCall, zIndex: 99 }}>
           <Grid
             container
@@ -215,7 +284,7 @@ export default function Page1({ myRef, mySrc, popup, pag }: IProps) {
           myRef={myRef}
           styleClass={classes.buttonFill}
         />
-      </Hidden>
+      </Hidden> */}
     </MainStyle>
   )
 }

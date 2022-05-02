@@ -13,16 +13,17 @@ const MainStyle = styled.div`
     /* background-color: red; */
     margin-top: min(20px, 3vh);
     margin-bottom: min(20px, 3vh);
-    display: flex;
+    /* display: flex; */
     justify-content: center;
     align-items: center;
     text-align: center;
+
     h1 {
       margin: 0;
       font-size: max(2.5vw, 25px);
     }
     span {
-      color: red;
+      /* color: red; */
     }
   }
   .video {
@@ -114,8 +115,18 @@ const MainStyle = styled.div`
   }
 
   .separado {
-    margin-top: min(30px, 4vh);
+    * {
+      line-height: 0.98;
+    }
+    margin-top: min(30px, 3vh);
     margin-bottom: min(30px, 4vh);
+  }
+
+  .title.separado {
+    h3 {
+      color: #e71345;
+      margin: 10px;
+    }
   }
 
   .other-background {

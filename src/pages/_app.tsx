@@ -3,6 +3,7 @@ import { ThemeProvider } from '@material-ui/core/styles'
 import Head from 'next/head'
 import PropTypes from 'prop-types'
 import React from 'react'
+import '../styles/reset.css'
 // import TagManager from 'react-gtm-module'
 import theme from '../theme'
 

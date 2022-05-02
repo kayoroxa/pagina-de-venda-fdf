@@ -7,10 +7,10 @@ interface IProps {
 
 export default function MyVideo({ src, ytID }: IProps) {
   return (
-    <Grid item lg={7} md={7} sm={12} xs={12}>
-      <Paper elevation={3} className="video" style={{ padding: 0 }}>
-        {src && (
-          <>
+    <>
+      {src && (
+        <Grid item lg={7} md={7} sm={12} xs={12}>
+          <Paper elevation={3} className="video" style={{ padding: 0 }}>
             <div
               style={{
                 position: 'relative',
@@ -51,11 +51,15 @@ export default function MyVideo({ src, ytID }: IProps) {
                 name="videoPlayerframe"
               ></iframe>
             </div>
-          </>
-        )}
+          </Paper>
+        </Grid>
+      )}
 
-        {ytID && <MrPlayer videoId={ytID} />}
-      </Paper>
-    </Grid>
+      {ytID && (
+        <Paper elevation={3} className="video" style={{ padding: 0 }}>
+          <MrPlayer videoId={ytID} />
+        </Paper>
+      )}
+    </>
   )
 }
