@@ -3,9 +3,10 @@ import MrPlayer from './MrPlayer'
 interface IProps {
   src?: string
   ytID?: string
+  callBack?: () => void
 }
 
-export default function MyVideo({ src, ytID }: IProps) {
+export default function MyVideo({ src, ytID, callBack }: IProps) {
   return (
     <>
       {src && (
@@ -57,7 +58,7 @@ export default function MyVideo({ src, ytID }: IProps) {
 
       {ytID && (
         <Paper elevation={3} className="video" style={{ padding: 0 }}>
-          <MrPlayer videoId={ytID} />
+          <MrPlayer videoId={ytID} callBack={callBack} />
         </Paper>
       )}
     </>

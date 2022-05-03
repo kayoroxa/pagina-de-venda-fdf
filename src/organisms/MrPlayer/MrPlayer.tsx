@@ -8,12 +8,13 @@ import { ContainerMrPlayer } from './styles-mr-player'
 interface IProps {
   videoId: string
   onGoBack?: () => void
+  callBack?: () => void
 }
 const easing = BezierEasing(0.04, 0.63, 0, 0.97)
 // const easing = BezierEasing(0.07, 0.67, 0.17, 1.01)
 const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms))
 
-const MrPlayer = ({ videoId, onGoBack }: IProps) => {
+const MrPlayer = ({ videoId, onGoBack, callBack }: IProps) => {
   const [isPaused, setIsPaused] = useState(true)
   const [isFullScreen, setIsFullScreen] = useState(false)
   const [videoTarget, setVideoTarget] = useState<YouTubePlayer | null>(null)
@@ -37,6 +38,10 @@ const MrPlayer = ({ videoId, onGoBack }: IProps) => {
 
         const percent = currentTime / duration
         const easyPercent = easing(percent) * 100
+
+        if (currentTime >= 906 && callBack) {
+          callBack()
+        }
 
         setVideoPercent(easyPercent)
       }, 500)

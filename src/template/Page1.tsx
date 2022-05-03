@@ -1,5 +1,6 @@
 import { Grid, Paper } from '@material-ui/core'
 import { useState } from 'react'
+import { useLocalStorage } from 'react-use'
 import Fac from '../components/Fac'
 import ListIsNot from '../organisms/ListIsNot'
 import MyButton from '../organisms/MyButton'
@@ -56,6 +57,7 @@ interface IProps {
 export default function Page1({ myRef, mySrc, popup, pag }: IProps) {
   const showPopupButton = popup
   const showVideoAndPrice = pag !== '2'
+  const [showPage, setShowPage] = useLocalStorage('showPage', false)
   // let linkCheckOutDemo =
   //   'https://pay.hotmart.com/Y51115808H?off=xnuk90zx&checkoutMode=10'
 
@@ -90,29 +92,37 @@ export default function Page1({ myRef, mySrc, popup, pag }: IProps) {
       <div className="title separado">
         <h3>ATENÇÃO:</h3>
         <h1 style={{ fontSize: 'min(5.8vw, 25px)' }}>
-          O QUE AS ESCOLAS DE INGLÊS <br /> NÃO ESTÃO FALANDO SOBRE <br />A
-          FLUÊNCIA NO INGLÊS
+          SÓ PARA QUEM
+          <br /> QUER POUPAR TEMPO <br /> E FICAR FLUENTE <br /> EM POUCOS MESES
+          {/* O QUE AS ESCOLAS DE INGLÊS <br /> NÃO ESTÃO FALANDO SOBRE <br />A
+          FLUÊNCIA NO INGLÊS */}
         </h1>
+        <p>
+          Assista todo o video e saiba como vai funcionar o curso. E como
+          participar
+        </p>
       </div>
       {showVideoAndPrice && (
-        <MyVideo ytID="XCzLIMUfBpU" />
+        <MyVideo ytID="XCzLIMUfBpU" callBack={() => setShowPage(true)} />
         // <MyVideo src="https://if.cdn.spotlightr.com/watch/MTIyMTYxNw==?fallback=true" />
       )}
       {/* <Grid container spacing={1} alignItems="center" justify="center">
         <MyPlan showVideoAndPrice={showVideoAndPrice} />
       </Grid> */}
 
-      <MyButton
-        href={linkCheckOut}
-        title={buttonTitle}
-        showPopup={showPopupButton}
-        color={colorButton}
-        myRef={myRef}
-        variant="fill"
-        // styleClass={classes.buttonFill}
-      />
+      {showPage && (
+        <>
+          <MyButton
+            href={linkCheckOut}
+            title={buttonTitle}
+            showPopup={showPopupButton}
+            color={colorButton}
+            myRef={myRef}
+            variant="fill"
+            // styleClass={classes.buttonFill}
+          />
 
-      {/* {showVideoAndPrice && (
+          {/* {showVideoAndPrice && (
         <>
           <div className="ao-redor">
             <img src="images/comprasegura.png" />
@@ -123,175 +133,135 @@ export default function Page1({ myRef, mySrc, popup, pag }: IProps) {
         </>
       )} */}
 
-      <div
-        style={{
-          padding: 2,
-          width: '100vw',
-          // background: '#0452b9',
-          // color: 'white',
-          // textAlign: 'center',
-        }}
-      >
-        <div
-          style={{
-            padding: 2,
-            margin: 'auto',
-            width: 'min(90%, 780px)',
-            fontSize: '1.03rem',
-            // textAlign: 'center',
-          }}
-        >
-          {/* <p>
+          <div
+            style={{
+              padding: 2,
+              width: '100vw',
+              // background: '#0452b9',
+              // color: 'white',
+              // textAlign: 'center',
+            }}
+          >
+            <div
+              style={{
+                padding: 2,
+                margin: 'auto',
+                width: 'min(90%, 780px)',
+                fontSize: '1.03rem',
+                // textAlign: 'center',
+              }}
+            >
+              {/* <p>
           Você já teve aulas de inglês na sua escola? Provavelmente já teve
           contato com aprender inglês...
         </p> */}
-          <p>
-            Mesmo <b>TODAS AS ESCOLAS</b> do brasil tendo o inglês como matéria,
-            você sabia que apenas <b>5% do brasil sabe inglês</b>?
-          </p>
-          <p>
-            E não quer dizer que essas pessoas são mais especiais que as outras,
-            e sim que existe formas rápida e efetiva de aprender inglês, que não
-            se aprende nas escolas.
-          </p>
-          {/* <p>
+              <p>
+                Mesmo <b>TODAS AS ESCOLAS</b> do brasil tendo o inglês como
+                matéria, você sabia que apenas <b>5% do brasil sabe inglês</b>?
+              </p>
+              <p>
+                E não quer dizer que essas pessoas são mais especiais que as
+                outras, e sim que existe formas rápida e efetiva de aprender
+                inglês, que não se aprende nas escolas.
+              </p>
+              {/* <p>
           Com o método que eu vou te apresentar hoje, é uma ponte para que você
           não precise se melar de lama.
         </p> */}
 
-          {/* <p>
+              {/* <p>
           Eu comecei me aventurar aprendendo inglês mas não sabia um método...
         </p> */}
-          <p>
-            Depois de eu revirar a internet em busca de um bom método, juntei
-            uma espécie de <b>formula para aprender inglês</b>..
-          </p>
-          <p>
-            <b>Depois de incontáveis dias</b> testando e refinando técnicas
-            avançadas. Hoje posso dizer que sei falar a lingua mais importante
-            do mundo.
-          </p>
-          <p>
-            O inglês me abriu portas e oportunidades, que hoje eu não saberia o
-            que seria da minha vida sem..
-          </p>
-          {/* <p>
+              <p>
+                Depois de eu revirar a internet em busca de um bom método,
+                juntei uma espécie de <b>formula para aprender inglês</b>..
+              </p>
+              <p>
+                <b>Depois de incontáveis dias</b> testando e refinando técnicas
+                avançadas. Hoje posso dizer que sei falar a lingua mais
+                importante do mundo.
+              </p>
+              <p>
+                O inglês me abriu portas e oportunidades, que hoje eu não
+                saberia o que seria da minha vida sem..
+              </p>
+              {/* <p>
             <b style={{ color: '#0ba861' }}>A boa noticia</b> é que você não vai
             precisar passar pelo que eu passei. Juntei tudo que funciona para
             aprender inglês em <b>1 terço do tempo</b>
           </p> */}
-          <p>
-            <b style={{ color: '#0ba861' }}>A boa noticia</b> é que você não vai
-            precisar pagar com seu tempo e dinheiro oque eu precisei pagar, não
-            precisando passar incontáveis dias refinando as técnicas que eu
-            refinei.
-          </p>
-          <p>
-            Juntei tudo que eu sei que funciona, e montei de uma forma pra{' '}
-            <b>reduzir 90% do tempo</b> que leva pra aprender
-          </p>
-          <p>Aqui está o método que vai trazer os novos bilíngue do brasil</p>
-        </div>
-      </div>
-      <h3
-        style={{
-          textAlign: 'center',
-          fontSize: 'min(8vw, 40px)',
-          padding: '0 min(6vw, 20px)',
-          marginBottom: 0,
-          lineHeight: '0.98',
-        }}
-      >
-        O incrível método <br />
-        Formula da fluência
-      </h3>
-
-      <ListIsNot />
-
-      <Fac />
-
-      <Paper elevation={3} className="garantia separado">
-        <Grid
-          container
-          spacing={2}
-          alignItems="center"
-          justify="flex-end"
-          className="grid"
-        >
-          <Grid item xs={12} sm={12} md={4} lg={4}>
-            <img src="images/garantia-grande.png" />
-          </Grid>
-
-          <Grid item xs={12} sm={12} md={8} lg={8}>
-            <h2>
-              <b>Confiamos no curso e em você!</b>
-            </h2>
-            <p>
-              Se em até 7 dias você não ficar satisfeito com o curso, nos mande
-              um e-mail e iremos te reembolsar completamente! Sem enganação e
-              enrolação, garantia 100%.
-            </p>
-          </Grid>
-        </Grid>
-      </Paper>
-
-      {/* <Hidden mdUp> */}
-      <div className="fixed" style={{ opacity: showCall, zIndex: 99 }}>
-        <MyButton
-          href={linkCheckOut}
-          title={buttonTitle}
-          showPopup={showPopupButton}
-          color={colorButton}
-          myRef={myRef}
-          variant="outlined"
-          // styleClass={classes.button}
-        />
-      </div>
-      {/* </Hidden> */}
-
-      {/* <Hidden smDown>
-        <div className="fixed-pc" style={{ opacity: showCall, zIndex: 99 }}>
-          <Grid
-            container
-            // spacing={2}
-            alignItems="center"
-            justify="space-around"
+              <p>
+                <b style={{ color: '#0ba861' }}>A boa noticia</b> é que você não
+                vai precisar pagar com seu tempo e dinheiro oque eu precisei
+                pagar, não precisando passar incontáveis dias refinando as
+                técnicas que eu refinei.
+              </p>
+              <p>
+                Juntei tudo que eu sei que funciona, e montei de uma forma pra{' '}
+                <b>reduzir 90% do tempo</b> que leva pra aprender
+              </p>
+              <p>
+                Aqui está o método que vai trazer os novos bilíngue do brasil
+              </p>
+            </div>
+          </div>
+          <h3
+            style={{
+              textAlign: 'center',
+              fontSize: 'min(8vw, 40px)',
+              padding: '0 min(6vw, 20px)',
+              marginBottom: 0,
+              lineHeight: '0.98',
+            }}
           >
-            <Grid item md={4} lg={3} className="show">
-              <Typography variant="subtitle1">
-                Invista na sua conquista e descubra como ficar fluente no inglês
-              </Typography>
+            O incrível método <br />
+            Formula da fluência
+          </h3>
+
+          <ListIsNot />
+
+          <Fac />
+
+          <Paper elevation={3} className="garantia separado">
+            <Grid
+              container
+              spacing={2}
+              alignItems="center"
+              justify="flex-end"
+              className="grid"
+            >
+              <Grid item xs={12} sm={12} md={4} lg={4}>
+                <img src="images/garantia-grande.png" />
+              </Grid>
+
+              <Grid item xs={12} sm={12} md={8} lg={8}>
+                <h2>
+                  <b>Confiamos no curso e em você!</b>
+                </h2>
+                <p>
+                  Se em até 7 dias você não ficar satisfeito com o curso, nos
+                  mande um e-mail e iremos te reembolsar completamente! Sem
+                  enganação e enrolação, garantia 100%.
+                </p>
+              </Grid>
             </Grid>
-            <Grid item md={4} lg={3} className="show">
-              {showVideoAndPrice && <Valor removeOldValue notColor />}
-            </Grid>
-            <Grid item md={3} lg={4} className="show">
-              <MyButton
-                href={linkCheckOut}
-                title={buttonTitle}
-                showPopup={showPopupButton}
-                color={colorButton}
-                myRef={myRef}
-                styleClass={classes.button}
-                styleInject={{
-                  fontSize: 'min(1.2vw, 19px)',
-                  width: '100%',
-                  height: 'auto',
-                }}
-                fullWidth
-              />
-            </Grid>
-          </Grid>
-        </div>
-        <MyButton
-          href={linkCheckOut}
-          title={buttonTitle}
-          showPopup={showPopupButton}
-          color={colorButton}
-          myRef={myRef}
-          styleClass={classes.buttonFill}
-        />
-      </Hidden> */}
+          </Paper>
+
+          {/* <Hidden mdUp> */}
+          <div className="fixed" style={{ opacity: showCall, zIndex: 99 }}>
+            <MyButton
+              href={linkCheckOut}
+              title={buttonTitle}
+              showPopup={showPopupButton}
+              color={colorButton}
+              myRef={myRef}
+              variant="outlined"
+              // styleClass={classes.button}
+            />
+          </div>
+          {/* </Hidden> */}
+        </>
+      )}
     </MainStyle>
   )
 }
