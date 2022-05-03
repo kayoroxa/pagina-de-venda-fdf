@@ -98,8 +98,8 @@ export default function Page1({ myRef, mySrc, popup, pag }: IProps) {
           FLUÊNCIA NO INGLÊS */}
         </h1>
         <p>
-          Assista todo o video e saiba como vai funcionar o curso. E como
-          participar
+          Apenas para quem assistir COMPLETAMENTE esse video explicativo abaixo
+          vai saber como ser aluno do curso, e como vai funcionar o método.
         </p>
       </div>
       {showVideoAndPrice && (

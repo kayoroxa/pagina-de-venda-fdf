@@ -39,7 +39,7 @@ const MrPlayer = ({ videoId, onGoBack, callBack }: IProps) => {
         const percent = currentTime / duration
         const easyPercent = easing(percent) * 100
 
-        if (currentTime >= 906 && callBack) {
+        if (currentTime >= 903 && callBack) {
           callBack()
         }
 
