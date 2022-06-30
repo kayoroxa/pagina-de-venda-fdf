@@ -262,6 +262,16 @@ export default function Page1({ myRef, mySrc, popup, pag }: IProps) {
           {/* </Hidden> */}
         </>
       )}
+
+      <ul className="pros">
+        <li>✅ Sem mensalidades, pagamento único</li>
+        <li>✅ Acesso ao curso pra sempre</li>
+        {/* <li>✅ Sem precisar sair de casa</li> */}
+        <li>✅ Em qualquer dispositivo</li>
+        {/* <li>✅ Garantia de 7 dias</li> */}
+        <li>✅ Suporte e acompanhamento no whatsapp</li>
+        {/* <li>✅ Do Básico ao Avançado</li> */}
+      </ul>
     </MainStyle>
   )
 }

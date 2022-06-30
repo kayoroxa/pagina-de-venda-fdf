@@ -142,5 +142,25 @@ const MainStyle = styled.div`
   .show {
     /* border: black 1px solid; */
   }
+
+  .pros {
+    justify-content: center;
+    min-width: 50%;
+    max-width: 400px;
+    text-align: center;
+    padding: 10px;
+    font-size: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 30px;
+    /* display: grid; */
+    /* grid collum 2 */
+    /* grid-template-columns: repeat(2, 1fr); */
+
+    li {
+      list-style: none;
+    }
+  }
 `
 export default MainStyle
