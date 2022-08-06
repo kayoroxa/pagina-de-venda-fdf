@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <Page1
       myRef={ref}
-      mySrc={src}
+      mySrc={src ? `ad-${src}` : 'ad'}
       popup={isPopup}
       pag={pag}
       ads={true}
