@@ -1,12 +1,17 @@
 import styled from 'styled-components'
 
-const MainStyle = styled.div`
+interface IProps {
+  showPage: boolean | undefined
+}
+
+const MainStyle = styled.div<IProps>`
   max-width: 100% !important;
+  min-height: 100vh;
   overflow-x: hidden;
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding-bottom: 12vh;
+  margin-bottom: ${props => (props.showPage ? '12vh' : '0')};
   .title {
     width: min(90%, 700px);
     /* height: 20vh; */
@@ -29,7 +34,7 @@ const MainStyle = styled.div`
   .video {
     width: min(93%, 700px);
     position: relative;
-    margin: auto;
+    /*  */
     /* height: 50vh; */
     /* background-color: pink; */
     display: flex;
@@ -116,7 +121,7 @@ const MainStyle = styled.div`
 
   .separado {
     * {
-      line-height: 0.98;
+      line-height: 1.2;
     }
     margin-top: min(30px, 3vh);
     margin-bottom: min(30px, 4vh);
@@ -161,6 +166,30 @@ const MainStyle = styled.div`
     li {
       list-style: none;
     }
+  }
+
+  .politics {
+    justify-content: center;
+    min-width: 50%;
+    text-align: center;
+    padding: 10px;
+    font-size: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: auto;
+    /* margin-bottom: 30px; */
+
+    a {
+      color: black;
+      text-decoration: none;
+      /* font-size: 1rem; */
+      /* font-weight: bold; */
+    }
+  }
+
+  h1 span {
+    color: #e71345;
   }
 `
 export default MainStyle

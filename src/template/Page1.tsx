@@ -52,12 +52,23 @@ interface IProps {
   mySrc: string | string[] | undefined
   pag: string | string[] | undefined
   popup: boolean
+  ads?: boolean
+  videoID?: string
 }
 
-export default function Page1({ myRef, mySrc, popup, pag }: IProps) {
+export default function Page1({
+  myRef,
+  mySrc,
+  popup,
+  pag,
+  ads,
+  videoID,
+}: IProps) {
   const showPopupButton = popup
   const showVideoAndPrice = pag !== '2'
-  const [showPage, setShowPage] = useLocalStorage('showPage', false)
+  const [showPage, setShowPage] = ads
+    ? useState(false)
+    : useLocalStorage('showPage', false)
   // let linkCheckOutDemo =
   //   'https://pay.hotmart.com/Y51115808H?off=xnuk90zx&checkoutMode=10'
 
@@ -88,28 +99,50 @@ export default function Page1({ myRef, mySrc, popup, pag }: IProps) {
     window?.addEventListener('scroll', myScrollFunc)
   }
   return (
-    <MainStyle>
+    <MainStyle showPage={showPage}>
       <div className="title separado">
         <h3>ATENÇÃO:</h3>
-        <h1 style={{ fontSize: 'min(5.8vw, 25px)' }}>
-          SÓ PARA QUEM
-          <br /> QUER POUPAR TEMPO <br /> E FICAR FLUENTE <br /> EM POUCOS MESES
-          {/* O QUE AS ESCOLAS DE INGLÊS <br /> NÃO ESTÃO FALANDO SOBRE <br />A
-          FLUÊNCIA NO INGLÊS */}
-        </h1>
-        <p>
-          Apenas para quem assistir COMPLETAMENTE esse video explicativo abaixo
-          vai saber como ser aluno do curso, e como vai funcionar o método.
-        </p>
+        {!ads && (
+          <>
+            <h1 style={{ fontSize: 'min(5.8vw, 25px)' }}>
+              SÓ PARA QUEM
+              <br /> QUER POUPAR TEMPO <br /> E FICAR FLUENTE <br /> EM POUCOS
+              MESES
+            </h1>
+            <p>
+              Apenas para quem assistir COMPLETAMENTE esse video explicativo
+              abaixo vai saber como ser aluno do curso, e como vai funcionar o
+              método.
+            </p>
+          </>
+        )}
+
+        {ads && (
+          <>
+            {/* <h1 style={{ fontSize: 'min(5.8vw, 25px)' }}>
+              O que os cursinhos <span>não dizem</span>
+              <br /> sobre como aprender <br />
+              <span>INGLÊS RÁPIDO</span>
+            </h1> */}
+            <h1 style={{ fontSize: 'min(5.8vw, 25px)' }}>
+              a verdade sobre <br />
+              como os <span>poliglotas</span>
+              <br />
+              aprenderam <span>INGLÊS RÁPIDO</span>
+            </h1>
+          </>
+        )}
       </div>
       {showVideoAndPrice && (
-        <MyVideo ytID="XCzLIMUfBpU" callBack={() => setShowPage(true)} />
+        <MyVideo
+          ytID={videoID ? videoID : 'XCzLIMUfBpU'}
+          callBack={() => setShowPage(true)}
+        />
         // <MyVideo src="https://if.cdn.spotlightr.com/watch/MTIyMTYxNw==?fallback=true" />
       )}
       {/* <Grid container spacing={1} alignItems="center" justify="center">
         <MyPlan showVideoAndPrice={showVideoAndPrice} />
       </Grid> */}
-
       {showPage && (
         <>
           <MyButton
@@ -263,15 +296,12 @@ export default function Page1({ myRef, mySrc, popup, pag }: IProps) {
         </>
       )}
 
-      <ul className="pros">
-        <li>✅ Sem mensalidades, pagamento único</li>
-        <li>✅ Acesso ao curso pra sempre</li>
-        {/* <li>✅ Sem precisar sair de casa</li> */}
-        <li>✅ Em qualquer dispositivo</li>
-        {/* <li>✅ Garantia de 7 dias</li> */}
-        <li>✅ Suporte e acompanhamento no whatsapp</li>
-        {/* <li>✅ Do Básico ao Avançado</li> */}
-      </ul>
+      {ads && (
+        <div className="politics">
+          <a href="/politicas-privacidade">politicas e privacidade</a>
+          <a href="/termos-de-uso">termos de uso</a>
+        </div>
+      )}
     </MainStyle>
   )
 }
