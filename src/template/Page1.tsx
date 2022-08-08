@@ -66,9 +66,12 @@ export default function Page1({
 }: IProps) {
   const showPopupButton = popup
   const showVideoAndPrice = pag !== '2'
+  // const [showPage, setShowPage] = useLocalStorage('showPage', false)
+
   const [showPage, setShowPage] = ads
     ? useState(false)
     : useLocalStorage('showPage', false)
+
   // let linkCheckOutDemo =
   //   'https://pay.hotmart.com/Y51115808H?off=xnuk90zx&checkoutMode=10'
 

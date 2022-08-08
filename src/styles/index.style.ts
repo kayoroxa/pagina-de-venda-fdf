@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 interface IProps {
-  showPage: boolean | undefined
+  showPage?: boolean
 }
 
 const MainStyle = styled.div<IProps>`
