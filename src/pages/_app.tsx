@@ -43,6 +43,10 @@ export default function MyApp(props: any) {
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=device-width"
         />
+        <meta
+          name="facebook-domain-verification"
+          content="egw3s3ne3rpl5ud4jvdmyymi7g3li5"
+        />
       </Head>
       <ThemeProvider theme={theme}>
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
