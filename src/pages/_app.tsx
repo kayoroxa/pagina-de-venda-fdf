@@ -7,6 +7,9 @@ import '../styles/reset.css'
 // import TagManager from 'react-gtm-module'
 import theme from '../theme'
 
+import { useRouter } from 'next/router'
+import { useEffect } from 'react'
+
 export default function MyApp(props: any) {
   const { Component, pageProps } = props
 
@@ -17,6 +20,21 @@ export default function MyApp(props: any) {
       jssStyles.parentElement.removeChild(jssStyles)
     }
   }, [])
+
+  const router = useRouter()
+
+  useEffect(() => {
+    import('react-facebook-pixel')
+      .then(x => x.default)
+      .then(ReactPixel => {
+        ReactPixel.init('1253070028830250') // facebookPixelId
+        ReactPixel.pageView()
+
+        router.events.on('routeChangeComplete', () => {
+          ReactPixel.pageView()
+        })
+      })
+  }, [router.events])
 
   // useEffect(() => {
   //   TagManager.initialize({ gtmId: 'GTM-WCK22R7' })
