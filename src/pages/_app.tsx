@@ -65,10 +65,6 @@ export default function MyApp(props: any) {
           name="facebook-domain-verification"
           content="tgiy0cfbswijmlfrufm5lz6obonopl"
         />
-        <meta
-          name="facebook-domain-verification"
-          content="egw3s3ne3rpl5ud4jvdmyymi7g3li5"
-        />
       </Head>
       <ThemeProvider theme={theme}>
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
