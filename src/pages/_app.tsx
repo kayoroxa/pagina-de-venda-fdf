@@ -63,6 +63,10 @@ export default function MyApp(props: any) {
         />
         <meta
           name="facebook-domain-verification"
+          content="tgiy0cfbswijmlfrufm5lz6obonopl"
+        />
+        <meta
+          name="facebook-domain-verification"
           content="egw3s3ne3rpl5ud4jvdmyymi7g3li5"
         />
       </Head>
