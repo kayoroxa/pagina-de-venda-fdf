@@ -66,17 +66,18 @@ export default function Page1({
 }: IProps) {
   const showPopupButton = popup
   const showVideoAndPrice = pag !== '2'
+  const is197 = ads
   // const [showPage, setShowPage] = useLocalStorage('showPage', false)
 
   const [showPage, setShowPage] = ads
-    ? useState(false)
+    ? useState(true)
     : useLocalStorage('showPage', false)
 
   // let linkCheckOutDemo =
   //   'https://pay.hotmart.com/Y51115808H?off=xnuk90zx&checkoutMode=10'
 
-  let linkCheckOut = !showVideoAndPrice
-    ? 'https://forms.gle/TmDRqpZtPNrUPLiW7'
+  let linkCheckOut = is197
+    ? 'https://pay.hotmart.com/Y51115808H?off=9g7hziuc&checkoutMode=10&split=12'
     : 'https://pay.hotmart.com/Y51115808H?off=fzv3lnkr&checkoutMode=10&split=12'
   // 'https://api.whatsapp.com/send?phone=5581975010604&text=Quero%20saber%20mais%20sobre%20o%20curso!!'
 

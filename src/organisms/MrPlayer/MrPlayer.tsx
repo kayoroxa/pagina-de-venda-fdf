@@ -1,10 +1,12 @@
 import BezierEasing from 'bezier-easing'
+import { useRouter } from 'next/router'
 import { useEffect, useRef, useState } from 'react'
 import { BiArrowBack, BiFullscreen } from 'react-icons/bi'
 import { FaPause, FaPlay } from 'react-icons/fa'
 import YouTube from 'react-youtube'
 import { YouTubePlayer } from 'youtube-player/dist/types'
 import { ContainerMrPlayer } from './styles-mr-player'
+
 interface IProps {
   videoId: string
   onGoBack?: () => void
@@ -12,9 +14,13 @@ interface IProps {
 }
 const easing = BezierEasing(0.04, 0.63, 0, 0.97)
 // const easing = BezierEasing(0.07, 0.67, 0.17, 1.01)
+
 const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms))
 
 const MrPlayer = ({ videoId, onGoBack, callBack }: IProps) => {
+  const router = useRouter()
+  const videoCTRTime = router.pathname === '/ad' ? 907 : 903
+
   const [isPaused, setIsPaused] = useState(true)
   const [isFullScreen, setIsFullScreen] = useState(false)
   const [videoTarget, setVideoTarget] = useState<YouTubePlayer | null>(null)
@@ -39,7 +45,7 @@ const MrPlayer = ({ videoId, onGoBack, callBack }: IProps) => {
         const percent = currentTime / duration
         const easyPercent = easing(percent) * 100
 
-        if (currentTime >= 903 && callBack) {
+        if (currentTime >= videoCTRTime && callBack) {
           callBack()
         }
 
