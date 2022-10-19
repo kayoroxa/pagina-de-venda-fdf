@@ -70,7 +70,7 @@ export default function Page1({
   // const [showPage, setShowPage] = useLocalStorage('showPage', false)
 
   const [showPage, setShowPage] = ads
-    ? useState(true)
+    ? useState(false)
     : useLocalStorage('showPage', false)
 
   // let linkCheckOutDemo =
