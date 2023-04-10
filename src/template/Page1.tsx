@@ -155,8 +155,9 @@ export default function Page1({
         <MyPlan showVideoAndPrice={showVideoAndPrice} />
       </Grid> */}
       {!showPage && (
-        <div style={{ padding: '0px 10px' }}>
-          Primeiro <b>assista</b> o vídeo para o <b>acesso ser liberado</b> 👆🏽
+        <div style={{ padding: '0px 10px', fontSize: '20px' }}>
+          Primeiro <b>assista</b> o vídeo 👆🏽 <br /> para o{' '}
+          <b>acesso ser liberado</b>
         </div>
       )}
       {showPage && (
