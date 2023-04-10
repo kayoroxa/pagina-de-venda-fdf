@@ -1,8 +1,9 @@
 import BezierEasing from 'bezier-easing'
 import { useRouter } from 'next/router'
 import { useEffect, useRef, useState } from 'react'
-import { BiArrowBack, BiFullscreen } from 'react-icons/bi'
+import { BiArrowBack } from 'react-icons/bi'
 import { FaPause, FaPlay } from 'react-icons/fa'
+import { useLocalStorage } from 'react-use'
 import YouTube from 'react-youtube'
 import { YouTubePlayer } from 'youtube-player/dist/types'
 import { ContainerMrPlayer } from './styles-mr-player'
@@ -19,12 +20,16 @@ const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms))
 
 const MrPlayer = ({ videoId, onGoBack, callBack }: IProps) => {
   const router = useRouter()
-  const videoCTRTime = router.pathname === '/ad' ? 907 : 903
+  const videoCTRTime = router.pathname === '/ad' ? 907 : 568 //903
 
   const [isPaused, setIsPaused] = useState(true)
   const [isFullScreen, setIsFullScreen] = useState(false)
   const [videoTarget, setVideoTarget] = useState<YouTubePlayer | null>(null)
   const [videoPercent, setVideoPercent] = useState(0)
+  const [lastTimeWatched, setLastTimeWatched] = useLocalStorage(
+    'last-time-watched',
+    0
+  )
 
   const goBack = useRef<HTMLDivElement>(null)
   const ref = useRef<HTMLDivElement>(null)
@@ -38,6 +43,17 @@ const MrPlayer = ({ videoId, onGoBack, callBack }: IProps) => {
 
   useEffect(() => {
     if (videoTarget) {
+      setTimeout(() => {
+        videoTarget?.setPlaybackRate(1.35)
+      }, 200)
+      if (lastTimeWatched !== 0 && typeof lastTimeWatched === 'number') {
+        videoTarget.seekTo(lastTimeWatched, true)
+      }
+    }
+  }, [videoTarget])
+
+  useEffect(() => {
+    if (videoTarget) {
       const interval = setInterval(async () => {
         const currentTime = await videoTarget?.getCurrentTime()
         const duration = await videoTarget?.getDuration()
@@ -48,7 +64,7 @@ const MrPlayer = ({ videoId, onGoBack, callBack }: IProps) => {
         if (currentTime >= videoCTRTime && callBack) {
           callBack()
         }
-
+        setLastTimeWatched(currentTime)
         setVideoPercent(easyPercent)
       }, 500)
 
@@ -183,12 +199,12 @@ const MrPlayer = ({ videoId, onGoBack, callBack }: IProps) => {
             <div className="play" onClick={() => toggleVideoPlay()}>
               {isPaused ? <FaPlay /> : <FaPause />}
             </div>
-            <div
+            {/* <div
               className="fullScreen"
               onClick={() => toggleFullScreen(ref.current)}
             >
               <BiFullscreen />
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

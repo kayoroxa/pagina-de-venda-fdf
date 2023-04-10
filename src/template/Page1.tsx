@@ -122,8 +122,8 @@ export default function Page1({
             </h1>
             <p>
               Apenas para quem assistir COMPLETAMENTE esse video explicativo
-              abaixo vai saber como ser aluno do curso, e como vai funcionar o
-              método.
+              abaixo vai saber como ser aluno do curso, e{' '}
+              <b>como vai funcionar</b> o método do curso.
             </p>
           </>
         )}
@@ -146,7 +146,7 @@ export default function Page1({
       </div>
       {showVideoAndPrice && (
         <MyVideo
-          ytID={videoID ? videoID : 'XCzLIMUfBpU'}
+          ytID={videoID ? videoID : 'tpWiYXjBpt8'}
           callBack={() => setShowPage(true)}
         />
         // <MyVideo src="https://if.cdn.spotlightr.com/watch/MTIyMTYxNw==?fallback=true" />
@@ -154,6 +154,11 @@ export default function Page1({
       {/* <Grid container spacing={1} alignItems="center" justify="center">
         <MyPlan showVideoAndPrice={showVideoAndPrice} />
       </Grid> */}
+      {!showPage && (
+        <div style={{ padding: '0px 10px' }}>
+          Primeiro <b>assista</b> o vídeo para o <b>acesso ser liberado</b> 👆🏽
+        </div>
+      )}
       {showPage && (
         <>
           <MyButton
