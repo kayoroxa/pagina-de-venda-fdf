@@ -23,7 +23,6 @@ const MrPlayer = ({ videoId, onGoBack, callBack }: IProps) => {
   const videoCTRTime = router.pathname === '/ad' ? 907 : 568 //903
 
   const [isPaused, setIsPaused] = useState(true)
-  const [isFullScreen, setIsFullScreen] = useState(false)
   const [videoTarget, setVideoTarget] = useState<YouTubePlayer | null>(null)
   const [videoPercent, setVideoPercent] = useState(0)
   const [lastTimeWatched, setLastTimeWatched] = useLocalStorage(
@@ -83,28 +82,28 @@ const MrPlayer = ({ videoId, onGoBack, callBack }: IProps) => {
     }
   }
 
-  function toggleFullScreen(elem: any) {
-    if (!document.fullscreenElement) {
-      if (elem.requestFullscreen) {
-        console.log(elem)
-        try {
-          elem?.requestFullscreen()
-        } catch (error) {
-          console.log('error request Full screen')
-        }
-      } else if (elem.webkitRequestFullscreen) {
-        elem.webkitRequestFullscreen()
-      } else if (elem.msRequestFullscreen) {
-        elem.msRequestFullscreen()
-      }
-      setIsFullScreen(true)
-      screen.orientation.lock('landscape-primary')
-    } else {
-      document.exitFullscreen()
-      setIsFullScreen(false)
-      screen.orientation.lock('portrait-primary')
-    }
-  }
+  // function toggleFullScreen(elem: any) {
+  //   if (!document.fullscreenElement) {
+  //     if (elem.requestFullscreen) {
+  //       console.log(elem)
+  //       try {
+  //         elem?.requestFullscreen()
+  //       } catch (error) {
+  //         console.log('error request Full screen')
+  //       }
+  //     } else if (elem.webkitRequestFullscreen) {
+  //       elem.webkitRequestFullscreen()
+  //     } else if (elem.msRequestFullscreen) {
+  //       elem.msRequestFullscreen()
+  //     }
+  //     setIsFullScreen(true)
+  //     screen.orientation.lock('landscape-primary')
+  //   } else {
+  //     document.exitFullscreen()
+  //     setIsFullScreen(false)
+  //     screen.orientation.lock('portrait-primary')
+  //   }
+  // }
 
   // useEffect(() => {
   //   function _isMobile() {
@@ -121,7 +120,7 @@ const MrPlayer = ({ videoId, onGoBack, callBack }: IProps) => {
   //   }
   // }, [ref])
   return (
-    <ContainerMrPlayer ref={ref} isFullScreen={isFullScreen}>
+    <ContainerMrPlayer ref={ref}>
       {onGoBack && (
         <div className="go-back" ref={goBack} onClick={onGoBack}>
           <BiArrowBack />

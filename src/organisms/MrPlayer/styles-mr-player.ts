@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 interface IProps {
-  isFullScreen: boolean
+  isFullScreen?: boolean
 }
 
 export const ContainerMrPlayer = styled.div<IProps>`
