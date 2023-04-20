@@ -20,7 +20,7 @@ const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms))
 
 const MrPlayer = ({ videoId, onGoBack, callBack }: IProps) => {
   const router = useRouter()
-  const videoCTRTime = router.pathname === '/ad' ? 907 : 568 //903
+  const videoCTRTime = router.pathname === '/ad' ? 907 : 575 //9:35
 
   const [isPaused, setIsPaused] = useState(true)
   const [videoTarget, setVideoTarget] = useState<YouTubePlayer | null>(null)
