@@ -89,7 +89,10 @@ export default function PageOnlyButton({ myRef, mySrc, popup, pag }: IProps) {
       </div>
       <Grid container spacing={1} alignItems="center" justify="center">
         {showVideoAndPrice && (
-          <MyVideo src="https://if.cdn.spotlightr.com/watch/MTIyMTYxNw==?fallback=true" />
+          <MyVideo
+            src="https://if.cdn.spotlightr.com/watch/MTIyMTYxNw==?fallback=true"
+            showPage={false}
+          />
         )}
         {/* <MyPlan showVideoAndPrice={showVideoAndPrice} /> */}
       </Grid>
