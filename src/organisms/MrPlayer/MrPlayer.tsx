@@ -42,9 +42,9 @@ const MrPlayer = ({ videoId, onGoBack, callBack }: IProps) => {
 
   useEffect(() => {
     if (videoTarget) {
-      setTimeout(() => {
-        videoTarget?.setPlaybackRate(1.2)
-      }, 200)
+      // setTimeout(() => {
+      //   videoTarget?.setPlaybackRate(1.2)
+      // }, 200)
       if (lastTimeWatched !== 0 && typeof lastTimeWatched === 'number') {
         videoTarget.seekTo(lastTimeWatched, true)
       }
