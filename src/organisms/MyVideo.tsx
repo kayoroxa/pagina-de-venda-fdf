@@ -4,9 +4,10 @@ interface IProps {
   src?: string
   ytID?: string
   callBack?: () => void
+  showPage: boolean
 }
 
-export default function MyVideo({ src, ytID, callBack }: IProps) {
+export default function MyVideo({ src, ytID, callBack, showPage }: IProps) {
   return (
     <>
       {src && (
@@ -58,7 +59,7 @@ export default function MyVideo({ src, ytID, callBack }: IProps) {
 
       {ytID && (
         <Paper elevation={3} className="video" style={{ padding: 0 }}>
-          <MrPlayer videoId={ytID} callBack={callBack} />
+          <MrPlayer videoId={ytID} callBack={callBack} showPage={showPage} />
         </Paper>
       )}
     </>

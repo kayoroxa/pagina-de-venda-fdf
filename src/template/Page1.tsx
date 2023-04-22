@@ -148,6 +148,7 @@ export default function Page1({
         <MyVideo
           ytID={videoID ? videoID : 'WEeqJ5calq0'}
           callBack={() => setShowPage(true)}
+          showPage={showPage ? true : false}
         />
         // <MyVideo src="https://if.cdn.spotlightr.com/watch/MTIyMTYxNw==?fallback=true" />
       )}

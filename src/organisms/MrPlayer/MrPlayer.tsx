@@ -12,13 +12,14 @@ interface IProps {
   videoId: string
   onGoBack?: () => void
   callBack?: () => void
+  showPage: boolean
 }
 const easing = BezierEasing(0.04, 0.63, 0, 0.97)
 // const easing = BezierEasing(0.07, 0.67, 0.17, 1.01)
 
 const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms))
 
-const MrPlayer = ({ videoId, onGoBack, callBack }: IProps) => {
+const MrPlayer = ({ videoId, onGoBack, callBack, showPage }: IProps) => {
   const router = useRouter()
   const videoCTRTime = router.pathname === '/ad' ? 907 : 575 //9:35
 
@@ -45,8 +46,14 @@ const MrPlayer = ({ videoId, onGoBack, callBack }: IProps) => {
       // setTimeout(() => {
       //   videoTarget?.setPlaybackRate(1.2)
       // }, 200)
-      if (lastTimeWatched !== 0 && typeof lastTimeWatched === 'number') {
+      if (
+        !showPage &&
+        lastTimeWatched !== 0 &&
+        typeof lastTimeWatched === 'number'
+      ) {
         videoTarget.seekTo(lastTimeWatched, true)
+      } else {
+        videoTarget.seekTo(0, true)
       }
     }
   }, [videoTarget])
