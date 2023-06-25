@@ -89,8 +89,18 @@ export default function Page1({
   const isArtur =
     mySrc && typeof mySrc === 'string' && mySrc.toLowerCase().endsWith('-a')
 
+  const isAninha =
+    !isArtur &&
+    mySrc &&
+    typeof mySrc === 'string' &&
+    mySrc.toLowerCase().includes('pb-')
+
   if (isArtur) {
     linkCheckOut = 'https://go.hotmart.com/E53339888M?ap=d4f3&split=12'
+  }
+
+  if (isAninha) {
+    linkCheckOut = 'https://go.hotmart.com/A84165916W?ap=d4f3&split=12'
   }
 
   if (mySrc) {
