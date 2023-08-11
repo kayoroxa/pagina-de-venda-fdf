@@ -53,7 +53,7 @@ interface IProps {
   pag: string | string[] | undefined
   popup: boolean
   ads?: boolean
-  videoID?: string
+  videoID: string
 }
 
 export default function Page1({
@@ -156,7 +156,7 @@ export default function Page1({
       </div>
       {showVideoAndPrice && (
         <MyVideo
-          ytID={videoID ? videoID : 'WEeqJ5calq0'}
+          ytID={videoID}
           callBack={() => setShowPage(true)}
           showPage={showPage ? true : false}
         />

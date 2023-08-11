@@ -6,6 +6,7 @@ import { FaPause, FaPlay } from 'react-icons/fa'
 import { useLocalStorage } from 'react-use'
 import YouTube from 'react-youtube'
 import { YouTubePlayer } from 'youtube-player/dist/types'
+import config from '../../config'
 import { ContainerMrPlayer } from './styles-mr-player'
 
 interface IProps {
@@ -21,7 +22,9 @@ const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms))
 
 const MrPlayer = ({ videoId, onGoBack, callBack, showPage }: IProps) => {
   const router = useRouter()
-  const videoCTRTime = router.pathname === '/ad' ? 907 : 575 //9:35
+  const { showPageSec, showPageAdSec } = config
+
+  const videoCTRTime = router.pathname === '/ad' ? showPageAdSec : showPageSec
 
   const [isPaused, setIsPaused] = useState(true)
   const [videoTarget, setVideoTarget] = useState<YouTubePlayer | null>(null)
