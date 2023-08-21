@@ -3,18 +3,15 @@ import { NextApiRequest, NextApiResponse } from 'next'
 
 const faunadbKey = process.env.FAUNA_DB_KEY
 
-if (!faunadbKey) {
-  throw new Error(
-    'A chave do FaunaDB não foi definida nas variáveis de ambiente.'
-  )
-}
-
-const client = new faunadb.Client({ secret: faunadbKey })
+const client = new faunadb.Client({ secret: faunadbKey || '' })
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
+  if (!faunadbKey) {
+    res.status(500).json({ error: 'Você não tem permissão ' })
+  }
   if (req.method === 'POST') {
     try {
       const { variationKey } = req.body
