@@ -3,17 +3,18 @@ import Page1 from '../template/Page1'
 
 export default function Home() {
   const router = useRouter()
-  const { ref, popup, pag, src } = router.query
+  const { ref, popup, pag } = router.query
 
   // redirect
   const isPopup = popup === 'true'
   return (
     <Page1
       myRef={ref}
-      mySrc={src ? `ad-${src}` : 'ad'}
+      // mySrc={src ? `ad-${src}` : 'ad'}
       popup={isPopup}
       pag={pag}
       ads={true}
+      urlCheckout=""
       videoID="xkqp97oZncE"
     />
   )
