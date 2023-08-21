@@ -17,6 +17,7 @@
     "@zeit/next-css": "^1.0.1",
     "axios": "^0.26.1",
     "bezier-easing": "^2.1.0",
+    "faunadb": "^4.8.0",
     "lodash": "^4.17.21",
     "next": "12",
     "react": "^16.13.0",
