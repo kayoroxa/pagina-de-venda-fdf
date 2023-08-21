@@ -49,64 +49,34 @@ const buttonTitle = 'Se cadastrar agora!'
 
 interface IProps {
   myRef: string | string[] | undefined
-  mySrc: string | string[] | undefined
+  // mySrc: string | string[] | undefined
   pag: string | string[] | undefined
   popup: boolean
   ads?: boolean
   videoID: string
+  urlCheckout: string
 }
 
 export default function Page1({
   myRef,
-  mySrc,
   popup,
   pag,
   ads,
   videoID,
+  urlCheckout: urlCheckoutSrc,
 }: IProps) {
   const showPopupButton = popup
   const showVideoAndPrice = pag !== '2'
-  const is197 = ads
-  // const [showPage, setShowPage] = useLocalStorage('showPage', false)
+  let linkCheckOut = urlCheckoutSrc
 
   const [showPage, setShowPage] = ads
     ? useState(false)
     : useLocalStorage('showPage', false)
 
-  // let linkCheckOutDemo =
-  //   'https://pay.hotmart.com/Y51115808H?off=xnuk90zx&checkoutMode=10'
-
-  let linkCheckOut = is197
-    ? 'https://pay.hotmart.com/Y51115808H?off=9g7hziuc&checkoutMode=10&split=12'
-    : 'https://pay.hotmart.com/Y51115808H?off=fzv3lnkr&checkoutMode=10&split=12'
-  // 'https://api.whatsapp.com/send?phone=5581975010604&text=Quero%20saber%20mais%20sobre%20o%20curso!!'
-
-  if (myRef === 'E53339888M')
-    linkCheckOut = !showVideoAndPrice
-      ? 'https://forms.gle/ySuoH6zZrBw2H15S6'
-      : 'https://bit.ly/34PctC3'
-
-  // const isArtur =
-  //   mySrc &&
-  //   typeof mySrc === 'string' &&
-  //   mySrc.toLowerCase().endsWith('-a') &&
-  //   !mySrc.toLowerCase().includes('pb-')
-
-  // if (isArtur) {
-  //   linkCheckOut = 'https://go.hotmart.com/E53339888M?ap=d4f3&split=12'
+  // if (mySrc) {
+  //   linkCheckOut += `&src=${mySrc}`
   // }
 
-  // const isAninha =
-  //   mySrc && typeof mySrc === 'string' && mySrc.toLowerCase().includes('pb-')
-
-  // if (isAninha) {
-  //   linkCheckOut = 'https://go.hotmart.com/A84165916W?ap=d4f3&split=12'
-  // }
-
-  if (mySrc) {
-    linkCheckOut += `&src=${mySrc}`
-  }
-  // const classes = useStyles()
   const [showCall, setShowCall] = useState(0)
   var myScrollFunc = function () {
     var y = window.scrollY

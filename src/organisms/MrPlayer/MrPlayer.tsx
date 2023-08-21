@@ -92,6 +92,23 @@ const MrPlayer = ({ videoId, onGoBack, callBack, showPage }: IProps) => {
     }
   }
 
+  useEffect(() => {
+    const func = (e: KeyboardEvent) => {
+      if (e.key === '*' && videoTarget) {
+        videoTarget.seekTo(config.showPageSec - 6, true)
+      }
+      if (e.key === '-' && videoTarget) {
+        videoTarget.seekTo(0, true)
+      }
+    }
+
+    document.addEventListener('keydown', func)
+
+    return () => {
+      document.removeEventListener('keydown', func)
+    }
+  }, [videoTarget])
+
   // function toggleFullScreen(elem: any) {
   //   if (!document.fullscreenElement) {
   //     if (elem.requestFullscreen) {
