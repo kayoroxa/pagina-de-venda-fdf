@@ -38,6 +38,15 @@ const MrPlayer = ({ videoId, onGoBack, callBack, showPage }: IProps) => {
     0
   )
 
+  const [videoStartedInZero, setVideoStartedInZero] = useState(false)
+  const [videoCompleted, setVideoCompleted] = useState(false)
+
+  useEffect(() => {
+    if (lastTimeWatched !== undefined && lastTimeWatched <= 20) {
+      setVideoStartedInZero(true)
+    }
+  }, [lastTimeWatched])
+
   const [startedVideo, setStartedVideo] = useState(false)
 
   const goBack = useRef<HTMLDivElement>(null)
@@ -49,6 +58,21 @@ const MrPlayer = ({ videoId, onGoBack, callBack, showPage }: IProps) => {
     // videoTarget?.seekTo(10, true)
     // event.target.seekTo(10)
   }
+
+  useEffect(() => {
+    if (videoCompleted) {
+      fetch('/api/visit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          variationKey: variationString,
+          event: 'videoCompleted',
+        }),
+      })
+    }
+  }, [videoCompleted])
 
   useEffect(() => {
     if (videoTarget) {
@@ -78,6 +102,7 @@ const MrPlayer = ({ videoId, onGoBack, callBack, showPage }: IProps) => {
 
         if (currentTime >= videoCTRTime && callBack) {
           callBack()
+          if (videoStartedInZero) setVideoCompleted(true)
         }
         setLastTimeWatched(currentTime)
         setVideoPercent(easyPercent)

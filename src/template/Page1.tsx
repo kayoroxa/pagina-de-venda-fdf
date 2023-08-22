@@ -1,5 +1,5 @@
 import { Grid, Paper } from '@material-ui/core'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { useLocalStorage } from 'react-use'
 import Fac from '../components/Fac'
 import ListIsNot from '../organisms/ListIsNot'
@@ -74,8 +74,6 @@ export default function Page1({
     ? useState(false)
     : useLocalStorage('showPage', false)
 
-  const [videoEnded, setVideoEnded] = useState(false)
-
   // if (mySrc) {
   //   linkCheckOut += `&src=${mySrc}`
   // }
@@ -110,23 +108,7 @@ export default function Page1({
     })
   }
 
-  useEffect(() => {
-    if (videoEnded === true) {
-      fetch('/api/visit', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          variationKey: variationString,
-          event: 'videoCompleted',
-        }),
-      })
-    }
-  }, [videoEnded])
-
   function handleWatchVideoComplete() {
-    setVideoEnded(true)
     setShowPage(true)
   }
 
