@@ -7,6 +7,10 @@ import { useLocalStorage } from 'react-use'
 import YouTube from 'react-youtube'
 import { YouTubePlayer } from 'youtube-player/dist/types'
 import config from '../../config'
+import {
+  DataLayerStore,
+  useDataLayerStore,
+} from '../../store/useDataLayerStore'
 import { ContainerMrPlayer } from './styles-mr-player'
 
 interface IProps {
@@ -33,6 +37,8 @@ const MrPlayer = ({ videoId, onGoBack, callBack, showPage }: IProps) => {
     'last-time-watched',
     0
   )
+
+  const [startedVideo, setStartedVideo] = useState(false)
 
   const goBack = useRef<HTMLDivElement>(null)
   const ref = useRef<HTMLDivElement>(null)
@@ -81,6 +87,25 @@ const MrPlayer = ({ videoId, onGoBack, callBack, showPage }: IProps) => {
     }
   }, [isPaused])
 
+  const variationString = useDataLayerStore(
+    (state: DataLayerStore) => state.variationString
+  )
+
+  useEffect(() => {
+    if (startedVideo === true) {
+      fetch('/api/visit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          variationKey: variationString,
+          event: 'videoStarted',
+        }),
+      })
+    }
+  }, [startedVideo])
+
   function toggleVideoPlay() {
     if (videoTarget) {
       // setIsPaused(!isPaused)
@@ -109,43 +134,6 @@ const MrPlayer = ({ videoId, onGoBack, callBack, showPage }: IProps) => {
     }
   }, [videoTarget])
 
-  // function toggleFullScreen(elem: any) {
-  //   if (!document.fullscreenElement) {
-  //     if (elem.requestFullscreen) {
-  //       console.log(elem)
-  //       try {
-  //         elem?.requestFullscreen()
-  //       } catch (error) {
-  //         console.log('error request Full screen')
-  //       }
-  //     } else if (elem.webkitRequestFullscreen) {
-  //       elem.webkitRequestFullscreen()
-  //     } else if (elem.msRequestFullscreen) {
-  //       elem.msRequestFullscreen()
-  //     }
-  //     setIsFullScreen(true)
-  //     screen.orientation.lock('landscape-primary')
-  //   } else {
-  //     document.exitFullscreen()
-  //     setIsFullScreen(false)
-  //     screen.orientation.lock('portrait-primary')
-  //   }
-  // }
-
-  // useEffect(() => {
-  //   function _isMobile() {
-  //     // if we want a more complete list use this: http://detectmobilebrowsers.com/
-  //     // str.test() is more efficent than str.match()
-  //     // remember str.test is case sensitive
-  //     var isMobile = /iphone|ipod|android|ie|blackberry|fennec/.test(
-  //       navigator.userAgent.toLowerCase()
-  //     )
-  //     return isMobile
-  //   }
-  //   if (ref.current && _isMobile()) {
-  //     toggleFullScreen(ref.current)
-  //   }
-  // }, [ref])
   return (
     <ContainerMrPlayer ref={ref}>
       {onGoBack && (
@@ -186,6 +174,7 @@ const MrPlayer = ({ videoId, onGoBack, callBack, showPage }: IProps) => {
           className="overlay"
           onClick={async () => {
             // setIsPaused(true)
+            setStartedVideo(true)
             if (isPaused) {
               videoTarget?.playVideo()
             } else {

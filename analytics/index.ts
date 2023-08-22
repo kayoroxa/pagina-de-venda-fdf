@@ -52,9 +52,9 @@ export function getRandom<DataType>(
   for (i = 1; i < options.length; i++)
     weights[i] = options[i].showPercent + weights[i - 1]
 
-  console.log({ weights })
+  // console.log({ weights })
   var random = Math.random() * weights[weights.length - 1]
-  console.log({ random })
+  // console.log({ random })
 
   for (i = 0; i < weights.length; i++) if (weights[i] > random) break
 

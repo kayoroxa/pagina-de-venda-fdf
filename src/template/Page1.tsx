@@ -1,10 +1,11 @@
 import { Grid, Paper } from '@material-ui/core'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useLocalStorage } from 'react-use'
 import Fac from '../components/Fac'
 import ListIsNot from '../organisms/ListIsNot'
 import MyButton from '../organisms/MyButton'
 import MyVideo from '../organisms/MyVideo'
+import { DataLayerStore, useDataLayerStore } from '../store/useDataLayerStore'
 import MainStyle from '../styles/index.style'
 
 // const colorButton = '#b3b3b3'
@@ -73,6 +74,8 @@ export default function Page1({
     ? useState(false)
     : useLocalStorage('showPage', false)
 
+  const [videoEnded, setVideoEnded] = useState(false)
+
   // if (mySrc) {
   //   linkCheckOut += `&src=${mySrc}`
   // }
@@ -89,6 +92,44 @@ export default function Page1({
   if (process.browser) {
     window?.addEventListener('scroll', myScrollFunc)
   }
+
+  const variationString = useDataLayerStore(
+    (state: DataLayerStore) => state.variationString
+  )
+
+  function handleButtonClick() {
+    fetch('/api/visit', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        variationKey: variationString,
+        event: 'goToCheckout',
+      }),
+    })
+  }
+
+  useEffect(() => {
+    if (videoEnded === true) {
+      fetch('/api/visit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          variationKey: variationString,
+          event: 'videoCompleted',
+        }),
+      })
+    }
+  }, [videoEnded])
+
+  function handleWatchVideoComplete() {
+    setVideoEnded(true)
+    setShowPage(true)
+  }
+
   return (
     <MainStyle showPage={showPage}>
       <div className="title separado">
@@ -127,7 +168,7 @@ export default function Page1({
       {showVideoAndPrice && (
         <MyVideo
           ytID={videoID}
-          callBack={() => setShowPage(true)}
+          callBack={handleWatchVideoComplete}
           showPage={showPage ? true : false}
         />
         // <MyVideo src="https://if.cdn.spotlightr.com/watch/MTIyMTYxNw==?fallback=true" />
@@ -143,15 +184,17 @@ export default function Page1({
       )}
       {showPage && (
         <>
-          <MyButton
-            href={linkCheckOut}
-            title={buttonTitle}
-            showPopup={showPopupButton}
-            color={colorButton}
-            myRef={myRef}
-            variant="fill"
-            // styleClass={classes.buttonFill}
-          />
+          <div onClick={handleButtonClick}>
+            <MyButton
+              href={linkCheckOut}
+              title={buttonTitle}
+              showPopup={showPopupButton}
+              color={colorButton}
+              myRef={myRef}
+              variant="fill"
+              // styleClass={classes.buttonFill}
+            />
+          </div>
 
           {/* {showVideoAndPrice && (
         <>

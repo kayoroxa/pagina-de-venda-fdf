@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router'
 import { useEffect } from 'react'
 import config from '../config'
+import { DataLayerStore, useDataLayerStore } from '../store/useDataLayerStore'
 import Page1 from '../template/Page1'
 
 export default function Home() {
@@ -8,6 +9,10 @@ export default function Home() {
   const { ref, pag, src } = router.query
 
   const { videoID, linkCheckOut, vslName, price, showPageSec } = config
+
+  const setVariationString = useDataLayerStore(
+    (state: DataLayerStore) => state.setVariationString
+  )
 
   // const { checkoutAndPrice, video } = variables
 
@@ -40,24 +45,28 @@ export default function Home() {
   }_${vslName}_${price}_sec-${showPageSec}`
 
   useEffect(() => {
-    window.dataLayer = window.dataLayer || []
+    if (!router.asPath.includes('src') || src) {
+      setVariationString(variationString)
 
-    window.dataLayer.push({
-      event: 'AB infos',
-      ...variation,
-    })
+      window.dataLayer = window.dataLayer || []
 
-    fetch('/api/visit', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'User-Agent': 'Insomnia/2023.5.3',
-      },
-      body: JSON.stringify({
-        variationKey: variationString,
-      }),
-    })
-  }, [])
+      window.dataLayer.push({
+        event: 'AB infos',
+        ...variation,
+      })
+
+      fetch('/api/visit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          variationKey: variationString,
+          event: 'view',
+        }),
+      })
+    }
+  }, [src])
 
   const linkCheckoutSrc = linkCheckOut + `&src=${variationString}`
 

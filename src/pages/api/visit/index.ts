@@ -14,7 +14,8 @@ export default async function handler(
   }
   if (req.method === 'POST') {
     try {
-      const { variationKey } = req.body
+      let { variationKey, event } = req.body
+      event = event || 'count'
 
       const docRef = q.Match(q.Index('visits_by_variation'), variationKey)
 
@@ -23,13 +24,16 @@ export default async function handler(
           q.Exists(docRef),
           q.Update(q.Select(['ref'], q.Get(docRef)), {
             data: {
-              count: q.Add(q.Select(['data', 'count'], q.Get(docRef)), 1),
+              [event]: q.Add(
+                q.Select(['data', event], q.Get(docRef), 0), // Retorna 0 se o evento não estiver presente
+                1
+              ),
             },
           }),
           q.Create(q.Collection('Visits'), {
             data: {
               key: variationKey,
-              count: 1,
+              [event]: 1,
             },
           })
         )
