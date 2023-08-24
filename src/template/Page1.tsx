@@ -2,6 +2,7 @@ import { Grid, Paper } from '@material-ui/core'
 import { useState } from 'react'
 import { useLocalStorage } from 'react-use'
 import Fac from '../components/Fac'
+import config from '../config'
 import ListIsNot from '../organisms/ListIsNot'
 import MyButton from '../organisms/MyButton'
 import MyVideo from '../organisms/MyVideo'
@@ -10,7 +11,7 @@ import MainStyle from '../styles/index.style'
 
 // const colorButton = '#b3b3b3'
 const colorButton = '#00bb3e'
-const buttonTitle = 'Se cadastrar agora!'
+const buttonTitle = config.buttonTitle
 
 // const useStyles = makeStyles({
 //   flexGrow: {

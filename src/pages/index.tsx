@@ -8,7 +8,8 @@ export default function Home() {
   const router = useRouter()
   const { ref, pag, src } = router.query
 
-  const { videoID, linkCheckOut, vslName, price, showPageSec } = config
+  const { videoID, linkCheckOut, vslName, price, showPageSec, buttonTitleTag } =
+    config
 
   const setVariationString = useDataLayerStore(
     (state: DataLayerStore) => state.setVariationString
@@ -42,7 +43,7 @@ export default function Home() {
   // "pb-45_omega_397_sec-600"
   const variationString = `${
     src || 'none'
-  }_${vslName}_${price}_sec-${showPageSec}`
+  }_${vslName}_${price}_sec-${showPageSec}_${buttonTitleTag}`
 
   useEffect(() => {
     if (!router.asPath.includes('src') || src) {

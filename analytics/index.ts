@@ -1,6 +1,29 @@
 import { getSecVideo } from '../src/utils/calcVideo'
 
 const variables = {
+  buttonTitle: [
+    {
+      tag: 'bt-1',
+      showPercent: 0.6,
+      data: {
+        value: 'Se cadastrar agora!',
+      },
+    },
+    {
+      tag: 'bt-2',
+      showPercent: 0.2,
+      data: {
+        value: 'Adquirir o curso!',
+      },
+    },
+    {
+      tag: 'bt-3',
+      showPercent: 0.2,
+      data: {
+        value: 'Quero ficar fluente!',
+      },
+    },
+  ],
   button: [
     {
       tag: 'showed',
@@ -34,7 +57,25 @@ const variables = {
       data: {
         value: 397,
         youtubeVideoId: '4G-DAgCicDs',
-        showPageSec: getSecVideo({ min: 8, sec: 45 }), //8:45
+        showPageSec: getSecVideo({ min: 8, sec: 45 }),
+      },
+    },
+    {
+      tag: 'omega',
+      showPercent: 0.15,
+      data: {
+        value: 397,
+        youtubeVideoId: '4G-DAgCicDs',
+        showPageSec: getSecVideo({ min: 5, sec: 0 }),
+      },
+    },
+    {
+      tag: 'omega',
+      showPercent: 0.05,
+      data: {
+        value: 397,
+        youtubeVideoId: '4G-DAgCicDs',
+        showPageSec: getSecVideo({ min: 0, sec: 0 }),
       },
     },
   ],
