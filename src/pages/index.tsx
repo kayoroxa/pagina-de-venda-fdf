@@ -4,9 +4,21 @@ import config from '../config'
 import { DataLayerStore, useDataLayerStore } from '../store/useDataLayerStore'
 import Page1 from '../template/Page1'
 
+declare global {
+  interface Window {
+    config: typeof config
+  }
+}
+
 export default function Home() {
   const router = useRouter()
   const { ref, pag, src } = router.query
+
+  useEffect(() => {
+    if (typeof document !== 'undefined') {
+      window.config = config
+    }
+  }, [])
 
   const { videoID, linkCheckOut, vslName, price, showPageSec, buttonTitleTag } =
     config

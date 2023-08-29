@@ -34,12 +34,4 @@ const config = {
   buttonTitleTag: button.tag,
 }
 
-declare global {
-  interface Window {
-    config: typeof config
-  }
-}
-
-window.config = config
-
 export default config
