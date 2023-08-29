@@ -68,11 +68,11 @@ let variables = {
       },
     },
     {
-      tag: 'omega',
+      tag: 'omega10',
       showPercent: 0.05,
       data: {
         value: 397,
-        youtubeVideoId: '4G-DAgCicDs',
+        youtubeVideoId: 'Sos6wA7qKD0',
         time: '00:04', //getSecVideo({ min: 0, sec: 0 }),
       },
     },
