@@ -1,6 +1,4 @@
-import { getSecVideo } from '../src/utils/calcVideo'
-
-const variables = {
+let variables = {
   buttonTitle: [
     {
       tag: 'bt-1',
@@ -53,11 +51,11 @@ const variables = {
   video: [
     {
       tag: 'omega',
-      showPercent: 0.8,
+      showPercent: 0.35,
       data: {
         value: 397,
         youtubeVideoId: '4G-DAgCicDs',
-        showPageSec: getSecVideo({ min: 8, sec: 45 }),
+        time: '08:45', //getSecVideo({ min: 8, sec: 45 }),
       },
     },
     {
@@ -66,7 +64,7 @@ const variables = {
       data: {
         value: 397,
         youtubeVideoId: '4G-DAgCicDs',
-        showPageSec: getSecVideo({ min: 5, sec: 0 }),
+        time: '05:00',
       },
     },
     {
@@ -75,7 +73,16 @@ const variables = {
       data: {
         value: 397,
         youtubeVideoId: '4G-DAgCicDs',
-        showPageSec: getSecVideo({ min: 0, sec: 0 }),
+        time: '00:04', //getSecVideo({ min: 0, sec: 0 }),
+      },
+    },
+    {
+      tag: 'omega10',
+      showPercent: 0.45,
+      data: {
+        value: 397,
+        youtubeVideoId: 'Sos6wA7qKD0',
+        time: '06:48', //getSecVideo({ min: 0, sec: 0 }),
       },
     },
   ],
