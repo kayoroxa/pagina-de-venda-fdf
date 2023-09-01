@@ -125,10 +125,14 @@ export default function Page1({
               MESES
             </h1>
             <p>
+              esse video explicativo abaixo vai saber como ser aluno do curso, e{' '}
+              <b>como vai funcionar</b> o método do curso.
+            </p>
+            {/* <p>
               Apenas para quem assistir COMPLETAMENTE esse video explicativo
               abaixo vai saber como ser aluno do curso, e{' '}
               <b>como vai funcionar</b> o método do curso.
-            </p>
+            </p> */}
           </>
         )}
 
