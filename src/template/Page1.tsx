@@ -124,15 +124,12 @@ export default function Page1({
               <br /> QUER POUPAR TEMPO <br /> E FICAR FLUENTE <br /> EM POUCOS
               MESES
             </h1>
+
             <p>
-              esse video explicativo abaixo vai saber como ser aluno do curso, e{' '}
-              <b>como vai funcionar</b> o método do curso.
-            </p>
-            {/* <p>
               Apenas para quem assistir COMPLETAMENTE esse video explicativo
               abaixo vai saber como ser aluno do curso, e{' '}
               <b>como vai funcionar</b> o método do curso.
-            </p> */}
+            </p>
           </>
         )}
 

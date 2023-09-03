@@ -49,51 +49,51 @@ let variables = {
     },
   ],
   video: [
-    // {
-    //   tag: 'omega',
-    //   showPercent: 0.35,
-    //   data: {
-    //     value: 397,
-    //     youtubeVideoId: '4G-DAgCicDs',
-    //     time: '08:45', //getSecVideo({ min: 8, sec: 45 }),
-    //   },
-    // },
-    // {
-    //   tag: 'omega',
-    //   showPercent: 0.15,
-    //   data: {
-    //     value: 397,
-    //     youtubeVideoId: '4G-DAgCicDs',
-    //     time: '05:00',
-    //   },
-    // },
-    // {
-    //   tag: 'omega10',
-    //   showPercent: 0.05,
-    //   data: {
-    //     value: 397,
-    //     youtubeVideoId: 'Sos6wA7qKD0',
-    //     time: '00:04', //getSecVideo({ min: 0, sec: 0 }),
-    //   },
-    // },
-    // {
-    //   tag: 'omega10',
-    //   showPercent: 0.45,
-    //   data: {
-    //     value: 397,
-    //     youtubeVideoId: 'Sos6wA7qKD0',
-    //     time: '06:48', //getSecVideo({ min: 0, sec: 0 }),
-    //   },
-    // },
+    {
+      tag: 'omega',
+      showPercent: 0.35,
+      data: {
+        value: 397,
+        youtubeVideoId: '4G-DAgCicDs',
+        time: '08:45', //getSecVideo({ min: 8, sec: 45 }),
+      },
+    },
+    {
+      tag: 'omega',
+      showPercent: 0.15,
+      data: {
+        value: 397,
+        youtubeVideoId: '4G-DAgCicDs',
+        time: '05:00',
+      },
+    },
+    {
+      tag: 'omega10',
+      showPercent: 0.05,
+      data: {
+        value: 397,
+        youtubeVideoId: 'Sos6wA7qKD0',
+        time: '04:04', //getSecVideo({ min: 0, sec: 0 }),
+      },
+    },
     {
       tag: 'omega10',
       showPercent: 0.45,
       data: {
         value: 397,
         youtubeVideoId: 'Sos6wA7qKD0',
-        time: '00:01', //getSecVideo({ min: 0, sec: 0 }),
+        time: '06:48', //getSecVideo({ min: 0, sec: 0 }),
       },
     },
+    // {
+    //   tag: 'omega10',
+    //   showPercent: 0.45,
+    //   data: {
+    //     value: 397,
+    //     youtubeVideoId: 'Sos6wA7qKD0',
+    //     time: '00:01', //getSecVideo({ min: 0, sec: 0 }),
+    //   },
+    // },
   ],
 }
 
