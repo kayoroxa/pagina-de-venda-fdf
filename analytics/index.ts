@@ -2,14 +2,14 @@ let variables = {
   buttonTitle: [
     {
       tag: 'bt-1',
-      showPercent: 0.6,
+      showPercent: 0.4,
       data: {
         value: 'Se cadastrar agora!',
       },
     },
     {
       tag: 'bt-2',
-      showPercent: 0.2,
+      showPercent: 0.6,
       data: {
         value: 'Adquirir o curso!',
       },
@@ -41,7 +41,7 @@ let variables = {
   checkoutAndPrice: [
     {
       tag: '397',
-      showPercent: 0.8,
+      showPercent: 1,
       data: {
         value: 397,
         link: 'https://pay.hotmart.com/Y51115808H?off=fzv3lnkr&checkoutMode=10&split=12',
@@ -50,41 +50,43 @@ let variables = {
   ],
   video: [
     {
-      tag: 'omega',
+      tag: 'omega10',
       showPercent: 0.35,
       data: {
         value: 397,
-        youtubeVideoId: '4G-DAgCicDs',
-        time: '08:45', //getSecVideo({ min: 8, sec: 45 }),
+        youtubeVideoId: 'Sos6wA7qKD0',
+        time: '04:04', //244  2.32%
       },
     },
     {
       tag: 'omega',
-      showPercent: 0.15,
+      showPercent: 0.4,
       data: {
         value: 397,
         youtubeVideoId: '4G-DAgCicDs',
-        time: '05:00',
+        time: '05:00', //300  1.86%
       },
     },
+
     {
-      tag: 'omega10',
-      showPercent: 0.05,
+      tag: 'omega',
+      showPercent: 0.25,
       data: {
         value: 397,
-        youtubeVideoId: 'Sos6wA7qKD0',
-        time: '04:04', //getSecVideo({ min: 0, sec: 0 }),
+        youtubeVideoId: '4G-DAgCicDs',
+        time: '08:45', //525   1.66%
       },
     },
-    {
-      tag: 'omega10',
-      showPercent: 0.45,
-      data: {
-        value: 397,
-        youtubeVideoId: 'Sos6wA7qKD0',
-        time: '06:48', //getSecVideo({ min: 0, sec: 0 }),
-      },
-    },
+
+    // {
+    //   tag: 'omega10',
+    //   showPercent: 0.45,
+    //   data: {
+    //     value: 397,
+    //     youtubeVideoId: 'Sos6wA7qKD0',
+    //     time: '06:48', //408  0.6%
+    //   },
+    // },
     // {
     //   tag: 'omega10',
     //   showPercent: 0.45,
