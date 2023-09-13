@@ -2,14 +2,14 @@ let variables = {
   buttonTitle: [
     {
       tag: 'bt-1',
-      showPercent: 0.4,
+      showPercent: 0.6,
       data: {
         value: 'Se cadastrar agora!',
       },
     },
     {
       tag: 'bt-2',
-      showPercent: 0.6,
+      showPercent: 0.4,
       data: {
         value: 'Adquirir o curso!',
       },
@@ -51,7 +51,7 @@ let variables = {
   video: [
     {
       tag: 'omega10',
-      showPercent: 0.35,
+      showPercent: 0.1,
       data: {
         value: 397,
         youtubeVideoId: 'Sos6wA7qKD0',
@@ -60,7 +60,7 @@ let variables = {
     },
     {
       tag: 'omega',
-      showPercent: 0.4,
+      showPercent: 0.1,
       data: {
         value: 397,
         youtubeVideoId: '4G-DAgCicDs',
@@ -70,7 +70,7 @@ let variables = {
 
     {
       tag: 'omega',
-      showPercent: 0.25,
+      showPercent: 0.8,
       data: {
         value: 397,
         youtubeVideoId: '4G-DAgCicDs',
