@@ -29,7 +29,7 @@
     "react-use": "^17.3.2",
     "react-youtube": "^7.13.1",
     "reactjs-popup": "^2.0.5",
-    "styled-components": "^5.0.0",
+    "styled-components": "^5.3.11",
     "youtube-player": "^5.5.2",
     "zustand": "^4.4.1"
   },
