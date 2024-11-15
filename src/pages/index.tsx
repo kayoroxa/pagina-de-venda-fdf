@@ -85,7 +85,6 @@ export default function Home() {
       }
 
       const countryCode = await getCountryByIP()
-      
 
       if (
         countryCode === 'US' ||
@@ -113,7 +112,8 @@ export default function Home() {
       videoID={videoID}
       urlCheckout={
         isDollar
-          ? 'https://pay.hotmart.com/Y51115808H?off=p5d4ks93&checkoutMode=10'
+          ? 'https://pay.hotmart.com/Y51115808H?off=p5d4ks93&checkoutMode=10' +
+            `&src=${variationString}`
           : linkCheckoutSrc
       }
     />
