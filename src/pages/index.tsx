@@ -92,7 +92,8 @@ export default function Home() {
         countryCode === 'GB' ||
         countryCode === 'AU' ||
         countryCode === 'UK' ||
-        countryCode === 'NZ'
+        countryCode === 'NZ' ||
+        countryCode === 'PT'
       ) {
         setIsDollar(true)
       }
