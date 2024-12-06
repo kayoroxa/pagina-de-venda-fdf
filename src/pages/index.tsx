@@ -87,13 +87,23 @@ export default function Home() {
       const countryCode = await getCountryByIP()
 
       if (
-        countryCode === 'US' ||
-        countryCode === 'CA' ||
-        countryCode === 'GB' ||
-        countryCode === 'AU' ||
         countryCode === 'UK' ||
-        countryCode === 'NZ' ||
-        countryCode === 'PT'
+        countryCode === 'US' || // Estados Unidos
+        countryCode === 'CA' || // Canadá
+        countryCode === 'GB' || // Reino Unido
+        countryCode === 'AU' || // Austrália
+        countryCode === 'NZ' || // Nova Zelândia
+        countryCode === 'PT' || // Portugal
+        countryCode === 'IT' || // Itália
+        countryCode === 'DE' || // Alemanha
+        countryCode === 'FR' || // França
+        countryCode === 'NL' || // Países Baixos
+        countryCode === 'BE' || // Bélgica
+        countryCode === 'LU' || // Luxemburgo
+        countryCode === 'CH' || // Suíça
+        countryCode === 'IE' || // Irlanda
+        countryCode === 'AD' || // Andorra
+        countryCode === 'SM' // San Marino
       ) {
         setIsDollar(true)
       }
@@ -105,19 +115,21 @@ export default function Home() {
   const linkCheckoutSrc = linkCheckOut + `&src=${variationString}`
 
   return (
-    <Page1
-      myRef={ref}
-      // mySrc={src}
-      popup={false}
-      pag={pag}
-      videoID={videoID}
-      urlCheckout={
-        isDollar
-          ? 'https://pay.hotmart.com/Y51115808H?off=p5d4ks93&checkoutMode=10&split=1' +
-            `&src=${variationString}`
-          : linkCheckoutSrc
-      }
-    />
+    <>
+      <Page1
+        myRef={ref}
+        // mySrc={src}
+        popup={false}
+        pag={pag}
+        videoID={videoID}
+        urlCheckout={
+          isDollar
+            ? 'https://pay.hotmart.com/Y51115808H?off=p5d4ks93&checkoutMode=10&split=1' +
+              `&src=${variationString}`
+            : linkCheckoutSrc
+        }
+      />
+    </>
   )
   // return <Page1 myRef={ref} mySrc={src} popup={popup === 'true'} pag={pag} />
 }

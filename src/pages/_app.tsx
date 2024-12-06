@@ -56,7 +56,7 @@ export default function MyApp(props: any) {
         `}
       </Script> */}
       <Head>
-        <title>Formula Da Fluência</title>
+        <title>Fórmula Da Fluência</title>
         <meta
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=device-width"

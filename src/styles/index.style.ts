@@ -96,6 +96,29 @@ const MainStyle = styled.div<IProps>`
     box-shadow: 0px 0px 8px 5px rgba(0, 0, 0, 0.2);
   }
 
+  .whatsAppIcon {
+    /* position: fixed; */
+    /* bottom: 5px; */
+    /* right: 20px; */
+    z-index: 9999;
+    cursor: pointer;
+
+    img {
+      transition: all 0.1s ease-in-out;
+    }
+
+    .text {
+      font-size: 1rem;
+      font-weight: 500;
+      color: #25d366; /* Cor padrão do WhatsApp */
+    }
+  }
+
+  .whatsAppIcon img:hover {
+    /* rotate */
+    transform: scale(1.1) rotate(8deg);
+  }
+
   .garantia {
     max-width: min(93%, 800px);
     border-radius: 10px;

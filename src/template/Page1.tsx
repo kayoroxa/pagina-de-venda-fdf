@@ -6,6 +6,7 @@ import config from '../config'
 import ListIsNot from '../organisms/ListIsNot'
 import MyButton from '../organisms/MyButton'
 import MyVideo from '../organisms/MyVideo'
+import { WhatsAppButton } from '../organisms/WhatsappButton'
 import { DataLayerStore, useDataLayerStore } from '../store/useDataLayerStore'
 import MainStyle from '../styles/index.style'
 
@@ -232,7 +233,7 @@ export default function Page1({
         </p> */}
               <p>
                 Depois de eu revirar a internet em busca de um bom método,
-                juntei uma espécie de <b>formula para aprender inglês</b>..
+                juntei uma espécie de <b>fórmula para aprender inglês</b>..
               </p>
               <p>
                 <b>Depois de incontáveis dias</b> testando e refinando técnicas
@@ -273,7 +274,7 @@ export default function Page1({
             }}
           >
             O incrível método <br />
-            Formula da fluência
+            Fórmula da fluência
           </h3>
 
           <ListIsNot />
@@ -306,16 +307,24 @@ export default function Page1({
           </Paper>
 
           {/* <Hidden mdUp> */}
-          <div className="fixed" style={{ opacity: showCall, zIndex: 99 }}>
-            <MyButton
-              href={linkCheckOut}
-              title={buttonTitle}
-              showPopup={showPopupButton}
-              color={colorButton}
-              myRef={myRef}
-              variant="outlined"
-              // styleClass={classes.button}
-            />
+          <div className="fixed" style={{ zIndex: 99 }}>
+            <div
+              style={{
+                opacity: showCall,
+                pointerEvents: showCall ? 'auto' : 'none',
+              }}
+            >
+              <MyButton
+                href={linkCheckOut}
+                title={buttonTitle}
+                showPopup={showPopupButton}
+                color={colorButton}
+                myRef={myRef}
+                variant="outlined"
+                // styleClass={classes.button}
+              />
+            </div>
+            <WhatsAppButton />
           </div>
           {/* </Hidden> */}
         </>

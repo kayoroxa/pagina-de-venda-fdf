@@ -1,4 +1,3 @@
-import React from 'react'
 import { ContainerButton } from './styles-button'
 
 interface IProps {
